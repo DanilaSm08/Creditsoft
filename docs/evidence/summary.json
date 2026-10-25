@@ -1,25 +1,25 @@
 {
-  "recorded_at": "2026-10-25T15:27:42.749060+00:00",
-  "head": "0fc88ccd22e5e7a6758736ec678479a793617fe7",
+  "recorded_at": "2026-10-25T19:51:16.985078+00:00",
+  "head": "8df9bfc9d1e7f58b1ab67cd9daa4cb72970146ba",
   "planned_counts": {
     "planned_additional": 6,
     "original": 24
   },
   "closed_counts": {
-    "planned_additional": 5,
+    "planned_additional": 6,
     "original": 24
   },
-  "defects": 3,
-  "closed_defects": 3,
+  "defects": 4,
+  "closed_defects": 4,
   "planned_hours": 140.0,
   "volume": {
-    "tracked_files": 140,
+    "tracked_files": 143,
     "files_by_extension": {
       "(без расширения)": 5,
       ".yml": 2,
       ".md": 10,
       ".yaml": 3,
-      ".py": 52,
+      ".py": 53,
       ".css": 3,
       ".js": 1,
       ".svg": 4,
@@ -31,14 +31,36 @@
       ".jsonl": 1,
       ".png": 23,
       ".conf": 1,
+      ".Dockerfile": 1,
       ".toml": 1,
-      ".ps1": 1
+      ".ps1": 2
     },
-    "authored_source_files": 63,
-    "authored_physical_lines": 3610,
+    "authored_source_files": 64,
+    "authored_physical_lines": 3757,
     "definition": "Tracked .py/.html/.css/.js/.yaml/.yml; excludes vendored Bootstrap and generated migrations; includes tests/tools; physical lines include blanks/comments."
   },
   "commits": [
+    {
+      "sha": "8df9bfc9d1e7f58b1ab67cd9daa4cb72970146ba",
+      "date": "2026-10-25T23:51:13+04:00",
+      "subject": "docs: add isolated report rendering and reliable HTML report viewing",
+      "added": 176,
+      "removed": 9
+    },
+    {
+      "sha": "67908d89b312ac5e267f6b9cdfe963986c7ed575",
+      "date": "2026-10-25T19:30:35+04:00",
+      "subject": "fix: export reports with a PDF printer and restore printer setting",
+      "added": 6,
+      "removed": 2
+    },
+    {
+      "sha": "6383566806ba4024c96ece529c8cf3e10228b774",
+      "date": "2026-10-25T19:27:43+04:00",
+      "subject": "test: verify protected main rejects direct fast-forward push",
+      "added": 29,
+      "removed": 16
+    },
     {
       "sha": "0fc88ccd22e5e7a6758736ec678479a793617fe7",
       "date": "2026-10-25T19:27:38+04:00",
@@ -126,11 +148,11 @@
     {
       "week": "2026-10-19",
       "planned_remaining_hours": 87.0,
-      "actual_remaining_plan_hours": 2.0,
-      "closed_issues": 32,
-      "commits": 4,
-      "added_lines": 12196,
-      "removed_lines": 16
+      "actual_remaining_plan_hours": 0,
+      "closed_issues": 34,
+      "commits": 7,
+      "added_lines": 12407,
+      "removed_lines": 43
     },
     {
       "week": "2026-10-26",
@@ -288,8 +310,9 @@
         "RL-02"
       ],
       "started_at": "2026-10-25T15:15:01.493859+00:00",
-      "elapsed_seconds": 761.26,
-      "snapshot_in_progress": true
+      "finished_at": "2026-10-25T19:46:44.552203+00:00",
+      "elapsed_seconds": 16303.06,
+      "method": "observed assisted phase wall time; shared tasks are not separately timed"
     }
   ],
   "limits": [

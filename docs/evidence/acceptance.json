@@ -807,8 +807,8 @@
     "category": "planned_additional",
     "issue": 30,
     "url": "http://localhost:3030/student/CreditSoft/issues/30",
-    "state": "open",
-    "closed_at": null,
+    "state": "closed",
+    "closed_at": "2026-10-25T19:46:44Z",
     "tests": [],
     "artifacts": [
       "docs/RELEASE.md",
