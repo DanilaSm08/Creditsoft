@@ -41,6 +41,11 @@ PostgreSQL хранит данные в отдельном томе. Остан�
 `coverage.xml`, `metrics.json`, `test-map.json`, `dist/`. Сборка wheel/sdist начинается
 только после успешных lint, форматирования, проверки миграций и тестов.
 
+Для просмотра HTML из кириллического пути используйте локальный HTTP-сервер:
+`python -m http.server 8090 --bind 127.0.0.1 --directory artifacts/runs/release`.
+Отчёт: http://127.0.0.1:8090/tests.html, покрытие: http://127.0.0.1:8090/coverage/.
+Прямое открытие `file://` в Chromium нарушает работу History API pytest-html.
+
 91 тест, включая два сценария Chromium, проверены на SQLite и PostgreSQL.
 100% строк и ветвей относится к измеряемому Python-коду `core`, без миграций и
 служебных команд. Это не измерение покрытия HTML/CSS/JavaScript и не гарантия отсутствия ошибок.
@@ -86,6 +91,8 @@ git commit -m "feat: describe change"
 - Повторная сборка отчётов: установить `requirements-reports.txt`, затем выполнить
   `python tools/collect_evidence.py`, `python tools/build_reports.py`. Экспорт PDF:
   `powershell -File tools/render_reports.ps1` (установленный Microsoft Word).
+  Если экспорт Word недоступен: `powershell -File tools/render_reports_docker.ps1`
+  (изолированный LibreOffice; установленные шрифты Windows подключаются только для чтения).
   Проверка страниц: `python tools/inspect_reports.py`.
 
 Репозиторий содержит воспроизводимый код, конфигурации, снимки результатов и исходники

@@ -1,6 +1,9 @@
 """Capture real repository and test-report pages; never render credential fields."""
 
 import json
+from functools import partial
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+from threading import Thread
 
 import requests
 from forge import BASE, REPO, ROOT, api
@@ -11,7 +14,12 @@ def main():
     folder = ROOT / "docs/images/infrastructure"
     folder.mkdir(parents=True, exist_ok=True)
     password = (ROOT / ".local/gitea_password").read_text().strip()
-    with sync_playwright() as playwright:
+    handler = partial(SimpleHTTPRequestHandler, directory=str(ROOT / "artifacts/runs"))
+    with (
+        ThreadingHTTPServer(("127.0.0.1", 0), handler) as report_server,
+        sync_playwright() as playwright,
+    ):
+        Thread(target=report_server.serve_forever, daemon=True).start()
         browser = playwright.chromium.launch()
         page = browser.new_page(viewport={"width": 1440, "height": 1000}, locale="ru-RU")
         page.goto("http://localhost:3030/user/login")
@@ -65,9 +73,12 @@ def main():
             else "postgres-regression"
         )
         for name, relative in {"tests": "tests.html", "coverage": "coverage/index.html"}.items():
-            page.goto((ROOT / "artifacts/runs" / stage / relative).as_uri())
+            page.goto(f"http://127.0.0.1:{report_server.server_port}/{stage}/{relative}")
+            if name == "tests":
+                page.locator("#results-table .results-table-row").first.wait_for()
             page.screenshot(path=str(folder / f"{name}.png"), full_page=False)
         browser.close()
+        report_server.shutdown()
     artifacts = api("GET", REPO + "/actions/artifacts")
     (ROOT / "docs/evidence/ci-artifacts.json").write_text(
         json.dumps(artifacts, indent=2), encoding="utf-8"
