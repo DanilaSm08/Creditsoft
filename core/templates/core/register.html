@@ -1,0 +1,5 @@
+{% extends 'core/base.html' %}
+{% block title %}Регистрация — CreditSoft{% endblock %}
+{% block content %}<section class="panel register-panel"><p class="eyebrow">ЛИЧНЫЙ КАБИНЕТ</p><h1>Регистрация</h1><p class="muted">Создайте аккаунт, чтобы сохранить анкету и результаты.</p>
+<form method="post" novalidate>{% csrf_token %}{{ form.non_field_errors }}{% include 'core/fields.html' %}<button class="btn btn-primary w-100" type="submit">Создать аккаунт</button></form>
+<p class="auth-switch">Есть аккаунт? <a href="{% url 'login' %}">Войти</a></p></section>{% endblock %}

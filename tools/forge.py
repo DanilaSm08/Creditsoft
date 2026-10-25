@@ -152,11 +152,12 @@ def main():
                 "rule_name": "main",
                 "enable_push": False,
                 "enable_status_check": True,
-                "status_check_contexts": ["quality"],
+                "status_check_contexts": ["CreditSoft CI / quality (pull_request)"],
                 "required_approvals": 0,
                 "block_on_rejected_reviews": True,
                 "block_on_outdated_branch": True,
                 "enable_force_push": False,
+                "block_admin_merge_override": True,
             },
         )
         print(json.dumps(result, ensure_ascii=False))
@@ -189,7 +190,7 @@ def main():
             "pulls": api("GET", REPO + "/pulls?state=all&limit=100"),
             "issues": api("GET", REPO + "/issues?state=all&limit=100&type=issues"),
             "releases": api("GET", REPO + "/releases"),
-            "runs": api("GET", REPO + "/actions/runs?limit=100"),
+            "runs": api("GET", REPO + "/actions/tasks?limit=100"),
         }
         path = ROOT / "docs/evidence/forge-export.json"
         path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")

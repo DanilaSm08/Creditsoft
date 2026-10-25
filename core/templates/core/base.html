@@ -1,0 +1,23 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}CreditSoft{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'core/vendor/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'core/app.css' %}">
+  <script defer src="{% static 'core/app.js' %}"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">К содержимому</a>
+<header class="site-header"><div class="shell header-inner">
+  <a class="brand" href="{% url 'questionnaire' %}"><span class="brand-mark">C</span>CreditSoft</a>
+  {% if user.is_authenticated %}<nav aria-label="Основная навигация"><a href="{% url 'questionnaire' %}">Анкета</a>{% block nav %}{% endblock %}</nav>
+  <div class="account"><span>{{ user.username }}</span><form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="text-button" type="submit">Выйти</button></form></div>{% endif %}
+</div></header>
+<main id="main" class="shell main-content">
+{% for message in messages %}<div class="notice" role="status">{{ message }}</div>{% endfor %}
+{% block content %}{% endblock %}
+</main>
+<footer class="shell site-footer"><span>CreditSoft · Учебный проект</span><span>Только демонстрационные данные и предложения</span></footer>
+</body></html>
