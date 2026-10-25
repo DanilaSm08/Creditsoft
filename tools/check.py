@@ -107,6 +107,9 @@ def main():
         "stage": args.stage,
         "recorded_at": datetime.now(UTC).isoformat(),
         "commit": git.stdout.strip(),
+        "working_tree_dirty": bool(
+            subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT, text=True).strip()
+        ),
         "passed": passed and build_status == 0,
         "lint_issues": len(json.loads(lint.stdout or "[]")),
         "format_exit": formatting,

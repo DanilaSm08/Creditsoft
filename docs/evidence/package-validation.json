@@ -1,0 +1,32 @@
+{
+  "wheel": "creditsoft-1.0.0-py3-none-any.whl",
+  "installed_resource_check": "installed wheel templates/static OK",
+  "ci_archive_valid": true,
+  "ci_metrics": {
+    "stage": "ci",
+    "recorded_at": "2026-10-25T15:20:01.081907+00:00",
+    "commit": "c795ee4e7833170c2aacc9ef24d521dd7242a211",
+    "passed": true,
+    "lint_issues": 0,
+    "format_exit": 0,
+    "migration_exit": 0,
+    "build_exit": 0,
+    "line_coverage_percent": 100.0,
+    "branch_coverage_percent": 100.0,
+    "tests": {
+      "tests": 91,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "passed": 91
+    },
+    "test_duration_seconds": 20.988,
+    "mean_complexity": 2.31,
+    "max_complexity": 13,
+    "source_files": 19,
+    "source_lines": 593,
+    "pipeline_seconds": 28.218,
+    "database": "SQLite",
+    "browser_included": true
+  }
+}

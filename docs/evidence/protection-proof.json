@@ -31,7 +31,11 @@
   },
   "direct_push": {
     "returncode": 1,
-    "output": "To http://localhost:3030/student/CreditSoft.git\n ! [rejected]        HEAD -> main (non-fast-forward)\nerror: failed to push some refs to 'http://localhost:3030/student/CreditSoft.git'\nhint: Updates were rejected because a pushed branch tip is behind its remote\nhint: counterpart. If you want to integrate the remote changes, use 'git pull'\nhint: before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.\nTraceback (most recent call last):\n  File \"D:\\STUDY\\КПО\\CreditSoft\\tools\\forge.py\", line 201, in <module>\n    main()\n  File \"D:\\STUDY\\КПО\\CreditSoft\\tools\\forge.py\", line 129, in main\n    git(\"push\", *args.arguments)\n  File \"D:\\STUDY\\КПО\\CreditSoft\\tools\\forge.py\", line 38, in git\n    subprocess.run([\"git\", *arguments], cwd=ROOT, env=environment, check=True)\n  File \"C:\\Users\\danil\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['git', 'push', 'origin', 'HEAD:main']' returned non-zero exit status 1.\n"
+    "output": "remote: \nremote: error:        \nremote: error: Not allowed to push to protected branch main        \nremote: error:        \nTo http://localhost:3030/student/CreditSoft.git\n ! [remote rejected] HEAD -> main (pre-receive hook declined)\nerror: failed to push some refs to 'http://localhost:3030/student/CreditSoft.git'\nTraceback (most recent call last):\n  File \"D:\\STUDY\\КПО\\CreditSoft\\tools\\forge.py\", line 201, in <module>\n    main()\n  File \"D:\\STUDY\\КПО\\CreditSoft\\tools\\forge.py\", line 129, in main\n    git(\"push\", *args.arguments)\n  File \"D:\\STUDY\\КПО\\CreditSoft\\tools\\forge.py\", line 38, in git\n    subprocess.run([\"git\", *arguments], cwd=ROOT, env=environment, check=True)\n  File \"C:\\Users\\danil\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['git', 'push', 'origin', 'HEAD:main']' returned non-zero exit status 1.\n",
+    "main_before": "c795ee4e7833170c2aacc9ef24d521dd7242a211",
+    "main_after": "c795ee4e7833170c2aacc9ef24d521dd7242a211",
+    "head": "0fc88ccd22e5e7a6758736ec678479a793617fe7",
+    "fast_forward_candidate": true
   },
   "merge_before_checks": {
     "blocked": true,

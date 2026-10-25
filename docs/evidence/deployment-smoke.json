@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-10-25T15:07:02.151764+00:00",
+  "recorded_at": "2026-10-25T15:13:01.400157+00:00",
   "url": "http://127.0.0.1:8080",
   "health": {
     "status": "ok",
@@ -7,7 +7,7 @@
   },
   "browser": "Chromium",
   "passed": true,
-  "reused_existing_account": false,
+  "reused_existing_account": true,
   "score": 900,
   "offer_count": 4,
   "javascript_errors": [],
