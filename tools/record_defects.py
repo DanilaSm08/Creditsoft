@@ -7,6 +7,13 @@ from forge import REPO, ROOT, api
 
 defects = [
     {
+        "id": "BUG-04",
+        "title": "HTML-отчёт pytest не показывает строки при открытии file:// из кириллической папки",
+        "cause": "Клиентский код pytest-html вызывает History.pushState с несовпадающим file:// URL; Chromium останавливает отрисовку таблицы.",
+        "fix": "Отчёт просматривается через локальный HTTP-сервер с ASCII-путём. Снимок ожидает появления строк результатов; README содержит команду просмотра.",
+        "evidence": "tools/capture_evidence.py; docs/images/infrastructure/tests.png; artifacts/runs/release/tests.html содержит 91 результат",
+    },
+    {
         "id": "BUG-01",
         "title": "CI не загружает артефакты по loopback-адресу Gitea",
         "cause": "URL localhost:3030 относится к контейнеру задания, а не к серверу Gitea.",

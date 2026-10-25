@@ -3,7 +3,7 @@
 import json
 from pathlib import Path
 
-import fitz
+import pymupdf
 from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -14,14 +14,14 @@ def main():
     output.mkdir(parents=True, exist_ok=True)
     summary = []
     for number in range(5, 9):
-        pdf = fitz.open(ROOT / f"reports/Lab_{number}.pdf")
+        pdf = pymupdf.open(ROOT / f"reports/Lab_{number}.pdf")
         thumbs = []
         sparse_pages = []
         for index, page in enumerate(pdf):
             text = page.get_text()
             if len(text.strip()) < 80 and not page.get_images():
                 sparse_pages.append(index + 1)
-            pixmap = page.get_pixmap(matrix=fitz.Matrix(0.6, 0.6), alpha=False)
+            pixmap = page.get_pixmap(matrix=pymupdf.Matrix(0.6, 0.6), alpha=False)
             img = Image.frombytes("RGB", [pixmap.width, pixmap.height], pixmap.samples)
             img.thumbnail((300, 425))
             thumb = Image.new("RGB", (320, 455), "#dddddd")

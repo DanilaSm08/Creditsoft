@@ -1,6 +1,16 @@
 {
-  "recorded_at": "2026-10-25T15:08:46.253271+00:00",
+  "recorded_at": "2026-10-25T19:50:21.752905+00:00",
   "defects": [
+    {
+      "id": "BUG-04",
+      "title": "HTML-отчёт pytest не показывает строки при открытии file:// из кириллической папки",
+      "cause": "Клиентский код pytest-html вызывает History.pushState с несовпадающим file:// URL; Chromium останавливает отрисовку таблицы.",
+      "fix": "Отчёт просматривается через локальный HTTP-сервер с ASCII-путём. Снимок ожидает появления строк результатов; README содержит команду просмотра.",
+      "evidence": "tools/capture_evidence.py; docs/images/infrastructure/tests.png; artifacts/runs/release/tests.html содержит 91 результат",
+      "issue": 38,
+      "url": "http://localhost:3030/student/CreditSoft/issues/38",
+      "category": "defect"
+    },
     {
       "id": "BUG-01",
       "title": "CI не загружает артефакты по loopback-адресу Gitea",
