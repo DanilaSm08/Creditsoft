@@ -38,6 +38,7 @@ def main():
     environment["SCREENSHOT_DIR"] = str(output / "screenshots")
     environment["PYTHONUTF8"] = "1"
     environment["PYTHONIOENCODING"] = "utf-8"
+    environment["TEST_MAP_PATH"] = str(output / "test-map.json")
     lint = subprocess.run(
         [sys.executable, "-m", "ruff", "check", ".", "--output-format=json"],
         cwd=ROOT,

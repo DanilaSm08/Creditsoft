@@ -1,0 +1,3 @@
+{% extends 'core/base.html' %}
+{% block title %}Результат — CreditSoft{% endblock %}
+{% block content %}<p class="eyebrow">ЛИЧНЫЙ КАБИНЕТ / РЕЗУЛЬТАТ</p><h1>Оценка ещё не рассчитана</h1><section class="panel empty-state"><h2>Начните с анкеты</h2><p class="muted">Сохраните данные заёмщика, затем нажмите «Рассчитать оценку».</p><a class="btn btn-primary" href="{% url 'questionnaire' %}">Открыть анкету</a></section>{% endblock %}

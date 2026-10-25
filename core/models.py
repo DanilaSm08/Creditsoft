@@ -73,3 +73,64 @@ class FinancialData(models.Model):
 
     def __str__(self):
         return f"Анкета пользователя {self.user_id}"
+
+
+class LoanOffer(models.Model):
+    name = models.CharField("Название", max_length=100, unique=True)
+    logo = models.CharField(
+        max_length=24,
+        choices=[("north", "Север"), ("axis", "Ось"), ("horizon", "Горизонт"), ("pulse", "Пульс")],
+    )
+    annual_rate = models.DecimalField(
+        max_digits=5, decimal_places=2, validators=[MinValueValidator(0)]
+    )
+    min_score = models.PositiveIntegerField(validators=[MaxValueValidator(1000)])
+    max_burden = models.DecimalField(
+        max_digits=5, decimal_places=2, validators=[MinValueValidator(0)]
+    )
+    min_amount = models.DecimalField(max_digits=12, decimal_places=2)
+    max_amount = models.DecimalField(max_digits=12, decimal_places=2)
+    min_term = models.PositiveIntegerField()
+    max_term = models.PositiveIntegerField()
+    active = models.BooleanField(default=True, db_index=True)
+
+    class Meta:
+        ordering = ("annual_rate", "pk")
+        constraints = [
+            models.CheckConstraint(
+                condition=models.Q(min_amount__lte=models.F("max_amount")),
+                name="offer_amount_order",
+            ),
+            models.CheckConstraint(
+                condition=models.Q(min_term__lte=models.F("max_term")), name="offer_term_order"
+            ),
+        ]
+
+    def __str__(self):
+        return self.name
+
+
+class Assessment(models.Model):
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="assessments"
+    )
+    score = models.PositiveIntegerField(validators=[MaxValueValidator(1000)])
+    burden_amount = models.DecimalField(max_digits=12, decimal_places=2)
+    burden_percent = models.DecimalField(max_digits=12, decimal_places=2)
+    input_snapshot = models.JSONField()
+    score_details = models.JSONField()
+    offers_snapshot = models.JSONField()
+    rules_version = models.CharField(max_length=20, default="edu-1.0")
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ("-created_at", "-pk")
+        indexes = [models.Index(fields=["user", "-created_at"], name="assessment_user_date")]
+        constraints = [
+            models.CheckConstraint(
+                condition=models.Q(score__gte=0, score__lte=1000), name="score_range"
+            )
+        ]
+
+    def __str__(self):
+        return f"Оценка {self.pk}: {self.score}/1000"

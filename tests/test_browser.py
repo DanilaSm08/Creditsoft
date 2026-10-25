@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 
 import pytest
+from django.core.management import call_command
 from playwright.sync_api import expect
 
 from .factories import VALID_DATA
@@ -74,3 +75,44 @@ def test_browser_questionnaire_round_trip(page, live_server):
     expect(page.get_by_role("heading", name="Вход", exact=True)).to_be_visible()
     page.goto(live_server.url + "/")
     expect(page.get_by_role("heading", name="Вход", exact=True)).to_be_visible()
+
+
+@pytest.mark.e2e
+@pytest.mark.requirement(
+    "CR-05.3", "CR-06.3", "CR-07.1", "CR-07.2", "CR-07.3", "CR-08.1", "CR-08.2", "CR-08.3", "QA-02"
+)
+def test_browser_full_assessment_and_repeat(page, live_server):
+    call_command("seed_catalogue", verbosity=0)
+    page.set_viewport_size({"width": 1440, "height": 1000})
+    screen = BorrowerPage(page, live_server.url)
+    screen.register("assessment-borrower")
+    screen.fill_questionnaire()
+    screen.save()
+    page.get_by_role("button", name="Рассчитать оценку").click()
+    expect(page.get_by_role("heading", name="Результат оценки", exact=True)).to_be_visible()
+    expect(page.get_by_test_id("score")).to_have_text("900")
+    expect(page.get_by_test_id("burden-percent")).to_have_text("15,00")
+    expect(page.locator(".offer-card")).to_have_count(4)
+    expect(page.locator(".offer-card").first).to_contain_text("12,90")
+    assert page.locator(".offer-bank img").evaluate_all(
+        "images => images.every(img => img.complete && img.naturalWidth > 0)"
+    )
+    original_url = page.url
+    screenshot(page, "results-desktop.png")
+    page.set_viewport_size({"width": 390, "height": 844})
+    assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
+    screenshot(page, "results-mobile.png")
+    page.get_by_role("link", name="Изменить анкету", exact=True).click()
+    screen.fill_questionnaire({"current_payments": "110000"})
+    screen.save()
+    page.goto(original_url)
+    expect(page.get_by_role("status")).to_contain_text("Анкета изменена")
+    page.get_by_role("button", name="Повторить оценку").click()
+    expect(page.get_by_test_id("burden-percent")).to_have_text("110,00")
+    expect(page.get_by_test_id("no-offers")).to_be_visible()
+    assert page.url != original_url
+    page.set_viewport_size({"width": 1440, "height": 1000})
+    screenshot(page, "results-no-offers.png")
+    page.goto(original_url)
+    expect(page.get_by_test_id("score")).to_have_text("900")
+    expect(page.locator(".offer-card")).to_have_count(4)

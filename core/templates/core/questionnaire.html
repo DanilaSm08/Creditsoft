@@ -7,4 +7,6 @@
 <section class="panel"><div class="section-heading"><span class="step-number">01</span><div><h2>Личные данные и работа</h2><p class="muted">Основные сведения о заёмщике</p></div></div><div class="form-grid">{% include 'core/fields.html' with form=profile_form %}</div></section>
 <section class="panel"><div class="section-heading"><span class="step-number">02</span><div><h2>Финансы и новый кредит</h2><p class="muted">Доход, действующие обязательства и параметры заявки</p></div></div><div class="form-grid">{% include 'core/fields.html' with form=finance_form %}</div></section>
 <div class="form-actions"><p class="muted">Изменения сохраняются после проверки полей.</p><button type="submit" class="btn btn-primary">Сохранить анкету</button></div>
-</form>{% endblock %}
+</form>
+{% if saved %}<section class="assessment-action"><div><h2>Перейти к оценке</h2><p class="muted">Расчёт использует последнюю сохранённую анкету.</p></div><form method="post" action="{% url 'evaluate' %}">{% csrf_token %}<button type="submit" class="btn btn-primary">Рассчитать оценку</button></form></section>{% endif %}
+{% endblock %}
