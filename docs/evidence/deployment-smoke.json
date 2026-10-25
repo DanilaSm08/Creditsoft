@@ -1,0 +1,15 @@
+{
+  "recorded_at": "2026-10-25T15:07:02.151764+00:00",
+  "url": "http://127.0.0.1:8080",
+  "health": {
+    "status": "ok",
+    "database": "postgresql"
+  },
+  "browser": "Chromium",
+  "passed": true,
+  "reused_existing_account": false,
+  "score": 900,
+  "offer_count": 4,
+  "javascript_errors": [],
+  "credential_file": ".local/demo_credentials.json"
+}

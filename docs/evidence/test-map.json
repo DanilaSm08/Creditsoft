@@ -1,0 +1,863 @@
+[
+  {
+    "test": "tests/test_accounts.py::AccountTests::test_auth_pages_and_unsupported_method",
+    "requirements": [
+      "CR-01.1",
+      "CR-01.2",
+      "CR-01.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_accounts.py::AccountTests::test_duplicate_and_password_validation",
+    "requirements": [
+      "CR-01.1",
+      "CR-01.2",
+      "CR-01.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_accounts.py::AccountTests::test_login_failure_success_logout_and_protected_page",
+    "requirements": [
+      "CR-01.1",
+      "CR-01.2",
+      "CR-01.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_accounts.py::AccountTests::test_login_ignores_external_redirect",
+    "requirements": [
+      "CR-01.1",
+      "CR-01.2",
+      "CR-01.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_accounts.py::AccountTests::test_registration_hashes_password_and_creates_session",
+    "requirements": [
+      "CR-01.1",
+      "CR-01.2",
+      "CR-01.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_accounts.py::AccountTests::test_registration_requires_csrf",
+    "requirements": [
+      "CR-01.1",
+      "CR-01.2",
+      "CR-01.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_health.py::test_health",
+    "requirements": [
+      "INF-01"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_health.py::test_health_read_only",
+    "requirements": [],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[full_name-\\u0418\\u0432\\u0430\\u043d]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[passport_series-123]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[passport_series-\\uff11\\uff12\\uff13\\uff14]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[passport_number-12345a]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[birth_date-2015-01-01]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[birth_date-1900-01-01]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[employer-]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[experience_months-900]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[experience_months-400]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[experience_months--1]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[monthly_income-0]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[monthly_income--1]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[monthly_income-NaN]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[monthly_income-abc]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[monthly_income-10000001]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[current_payments--1]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[requested_amount-9999.99]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[requested_amount-5000000.01]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[term_months-5]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[term_months-85]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_fields_are_reported_without_partial_save[term_months-6.5]",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2",
+      "CR-03.1",
+      "CR-03.2",
+      "CR-04.1",
+      "CR-04.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_save_reload_edit_and_isolation",
+    "requirements": [
+      "CR-02.3",
+      "CR-03.3",
+      "CR-04.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_invalid_edit_keeps_saved_data_and_displays_both_forms",
+    "requirements": [
+      "CR-04.1",
+      "CR-04.2",
+      "CR-04.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_empty_form_and_methods",
+    "requirements": [
+      "CR-04.1"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_inclusive_financial_boundaries_and_payments_above_income[10000-6]",
+    "requirements": [
+      "CR-03.1",
+      "CR-03.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_inclusive_financial_boundaries_and_payments_above_income[5000000-84]",
+    "requirements": [
+      "CR-03.1",
+      "CR-03.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_database_constraints_and_model_labels",
+    "requirements": [
+      "CR-03.3",
+      "CR-04.1"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_results.py::test_catalogue_idempotence_and_sorted_selection",
+    "requirements": [
+      "CR-07.1",
+      "CR-07.2",
+      "CR-07.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_results.py::test_every_offer_filter_boundary[850-30000-50000-12-True]",
+    "requirements": [
+      "CR-07.2",
+      "CR-07.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_results.py::test_every_offer_filter_boundary[849-30000-50000-12-False]",
+    "requirements": [
+      "CR-07.2",
+      "CR-07.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_results.py::test_every_offer_filter_boundary[850-30000.01-50000-12-False]",
+    "requirements": [
+      "CR-07.2",
+      "CR-07.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_results.py::test_every_offer_filter_boundary[850-30000-49999.99-12-False]",
+    "requirements": [
+      "CR-07.2",
+      "CR-07.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_results.py::test_every_offer_filter_boundary[850-30000-1000000-60-True]",
+    "requirements": [
+      "CR-07.2",
+      "CR-07.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_results.py::test_every_offer_filter_boundary[850-30000-1000000.01-60-False]",
+    "requirements": [
+      "CR-07.2",
+      "CR-07.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_results.py::test_every_offer_filter_boundary[850-30000-50000-11-False]",
+    "requirements": [
+      "CR-07.2",
+      "CR-07.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_results.py::test_every_offer_filter_boundary[850-30000-50000-61-False]",
+    "requirements": [
+      "CR-07.2",
+      "CR-07.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_results.py::test_inactive_no_results_and_stable_tie",
+    "requirements": [
+      "CR-07.2",
+      "CR-07.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_results.py::test_result_snapshot_recalculation_and_catalogue_independence",
+    "requirements": [
+      "CR-08.1",
+      "CR-08.2",
+      "CR-08.3",
+      "CR-05.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_results.py::test_missing_questionnaire_empty_result_and_authorization",
+    "requirements": [
+      "CR-08.3",
+      "CR-01.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_results.py::test_result_owner_enforced_and_evaluation_csrf",
+    "requirements": [
+      "CR-08.3",
+      "CR-01.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_browser.py::test_browser_questionnaire_round_trip[chromium]",
+    "requirements": [
+      "PR-01",
+      "CR-01.2",
+      "CR-01.3",
+      "CR-02.3",
+      "CR-03.3",
+      "CR-04.2",
+      "CR-04.3"
+    ],
+    "browser": true
+  },
+  {
+    "test": "tests/test_browser.py::test_browser_full_assessment_and_repeat[chromium]",
+    "requirements": [
+      "CR-05.3",
+      "CR-06.3",
+      "CR-07.1",
+      "CR-07.2",
+      "CR-07.3",
+      "CR-08.1",
+      "CR-08.2",
+      "CR-08.3",
+      "QA-02"
+    ],
+    "browser": true
+  },
+  {
+    "test": "tests/test_questionnaire.py::test_birthday_age_and_zero_tenure",
+    "requirements": [
+      "CR-02.1",
+      "CR-02.2"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_burden_formula[100000-15000-15.00]",
+    "requirements": [
+      "CR-05.1",
+      "CR-05.2",
+      "CR-05.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_burden_formula[30000-10000-33.33]",
+    "requirements": [
+      "CR-05.1",
+      "CR-05.2",
+      "CR-05.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_burden_formula[100-0-0.00]",
+    "requirements": [
+      "CR-05.1",
+      "CR-05.2",
+      "CR-05.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_burden_formula[100-100-100.00]",
+    "requirements": [
+      "CR-05.1",
+      "CR-05.2",
+      "CR-05.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_burden_formula[100-150-150.00]",
+    "requirements": [
+      "CR-05.1",
+      "CR-05.2",
+      "CR-05.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_burden_formula[1-10000000-1000000000.00]",
+    "requirements": [
+      "CR-05.1",
+      "CR-05.2",
+      "CR-05.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_burden_score_boundaries[0-450]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_burden_score_boundaries[10000-450]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_burden_score_boundaries[10000.01-350]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_burden_score_boundaries[30000-350]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_burden_score_boundaries[30000.01-200]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_burden_score_boundaries[50000-200]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_burden_score_boundaries[50000.01-80]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_burden_score_boundaries[70000-80]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_burden_score_boundaries[70000.01-0]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_burden_score_boundaries[200000-0]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_tenure_score_boundaries[0-0]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_tenure_score_boundaries[1-40]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_tenure_score_boundaries[5-40]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_tenure_score_boundaries[6-100]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_tenure_score_boundaries[11-100]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_tenure_score_boundaries[12-180]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_tenure_score_boundaries[35-180]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_tenure_score_boundaries[36-250]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_tenure_score_boundaries[684-250]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_amount_score_boundaries[600000-300]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_amount_score_boundaries[600000.01-220]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_amount_score_boundaries[1200000-220]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_amount_score_boundaries[1200000.01-100]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_amount_score_boundaries[2400000-100]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_amount_score_boundaries[2400000.01-0]",
+    "requirements": [
+      "CR-06.1",
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_extremes_determinism_and_example",
+    "requirements": [
+      "CR-06.2",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_invalid_direct_service_inputs[0-0-1-0]",
+    "requirements": [
+      "CR-05.1",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_invalid_direct_service_inputs[-1-0-1-0]",
+    "requirements": [
+      "CR-05.1",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_invalid_direct_service_inputs[1--1-1-0]",
+    "requirements": [
+      "CR-05.1",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_invalid_direct_service_inputs[1-0-0-0]",
+    "requirements": [
+      "CR-05.1",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_invalid_direct_service_inputs[1-0-1--1]",
+    "requirements": [
+      "CR-05.1",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_invalid_direct_service_inputs[NaN-0-1-0]",
+    "requirements": [
+      "CR-05.1",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_invalid_direct_service_inputs[1-Infinity-1-0]",
+    "requirements": [
+      "CR-05.1",
+      "CR-06.3"
+    ],
+    "browser": false
+  },
+  {
+    "test": "tests/test_scoring.py::test_invalid_direct_service_inputs[1-0--Infinity-0]",
+    "requirements": [
+      "CR-05.1",
+      "CR-06.3"
+    ],
+    "browser": false
+  }
+]

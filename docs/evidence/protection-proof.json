@@ -1,0 +1,40 @@
+{
+  "pull_request": 32,
+  "head": "238beac2aa07170daf8e0279ebbb5b8a8e752036",
+  "statuses": [
+    {
+      "id": 2,
+      "status": "pending",
+      "target_url": "/student/CreditSoft/actions/runs/6/jobs/0",
+      "description": "Waiting to run",
+      "url": "http://localhost:3030/api/v1/repos/student/CreditSoft/statuses/238beac2aa07170daf8e0279ebbb5b8a8e752036",
+      "context": "CreditSoft CI / quality (push)",
+      "creator": null,
+      "created_at": "2026-10-25T14:58:51Z",
+      "updated_at": "2026-10-25T14:58:51Z"
+    },
+    {
+      "id": 3,
+      "status": "failure",
+      "target_url": "/student/CreditSoft/actions/runs/5/jobs/0",
+      "description": "Failing after 3m2s",
+      "url": "http://localhost:3030/api/v1/repos/student/CreditSoft/statuses/238beac2aa07170daf8e0279ebbb5b8a8e752036",
+      "context": "CreditSoft CI / quality (pull_request)",
+      "creator": null,
+      "created_at": "2026-10-25T15:05:09Z",
+      "updated_at": "2026-10-25T15:05:09Z"
+    }
+  ],
+  "invalid_commit": {
+    "returncode": 1,
+    "output": "Invalid commit subjects:\ninvalid message\n"
+  },
+  "direct_push": {
+    "returncode": 1,
+    "output": "To http://localhost:3030/student/CreditSoft.git\n ! [rejected]        HEAD -> main (non-fast-forward)\nerror: failed to push some refs to 'http://localhost:3030/student/CreditSoft.git'\nhint: Updates were rejected because a pushed branch tip is behind its remote\nhint: counterpart. If you want to integrate the remote changes, use 'git pull'\nhint: before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.\nTraceback (most recent call last):\n  File \"D:\\STUDY\\КПО\\CreditSoft\\tools\\forge.py\", line 201, in <module>\n    main()\n  File \"D:\\STUDY\\КПО\\CreditSoft\\tools\\forge.py\", line 129, in main\n    git(\"push\", *args.arguments)\n  File \"D:\\STUDY\\КПО\\CreditSoft\\tools\\forge.py\", line 38, in git\n    subprocess.run([\"git\", *arguments], cwd=ROOT, env=environment, check=True)\n  File \"C:\\Users\\danil\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['git', 'push', 'origin', 'HEAD:main']' returned non-zero exit status 1.\n"
+  },
+  "merge_before_checks": {
+    "blocked": true,
+    "output": "Gitea POST /repos/student/CreditSoft/pulls/32/merge: 405: {\"message\":\"Not all required status checks successful\",\"url\":\"http://localhost:3030/api/swagger\"}\n"
+  }
+}

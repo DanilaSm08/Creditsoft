@@ -6,13 +6,14 @@
   <title>{% block title %}CreditSoft{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'core/vendor/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'core/app.css' %}">
+  <link rel="stylesheet" href="{% static 'core/results.css' %}">
   <script defer src="{% static 'core/app.js' %}"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">К содержимому</a>
 <header class="site-header"><div class="shell header-inner">
   <a class="brand" href="{% url 'questionnaire' %}"><span class="brand-mark">C</span>CreditSoft</a>
-  {% if user.is_authenticated %}<nav aria-label="Основная навигация"><a href="{% url 'questionnaire' %}">Анкета</a>{% block nav %}{% endblock %}</nav>
+  {% if user.is_authenticated %}<nav aria-label="Основная навигация"><a href="{% url 'questionnaire' %}">Анкета</a><a href="{% url 'latest_result' %}">Результат</a></nav>
   <div class="account"><span>{{ user.username }}</span><form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="text-button" type="submit">Выйти</button></form></div>{% endif %}
 </div></header>
 <main id="main" class="shell main-content">
