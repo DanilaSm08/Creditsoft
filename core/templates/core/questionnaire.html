@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+{% block title %}Анкета заёмщика — CreditSoft{% endblock %}
+{% block content %}
+<div class="page-heading"><div><p class="eyebrow">ЛИЧНЫЙ КАБИНЕТ / АНКЕТА</p><h1>Анкета заёмщика</h1><p class="muted">Все поля обязательны. Данные доступны только в вашем аккаунте.</p></div><span class="status-badge">{% if saved %}Анкета сохранена{% else %}Новая анкета{% endif %}</span></div>
+<form method="post" novalidate class="questionnaire-form">{% csrf_token %}
+{% if profile_form.errors or finance_form.errors %}<div class="error-summary" role="alert">Проверьте выделенные поля. Изменения не сохранены.</div>{% endif %}
+<section class="panel"><div class="section-heading"><span class="step-number">01</span><div><h2>Личные данные и работа</h2><p class="muted">Основные сведения о заёмщике</p></div></div><div class="form-grid">{% include 'core/fields.html' with form=profile_form %}</div></section>
+<section class="panel"><div class="section-heading"><span class="step-number">02</span><div><h2>Финансы и новый кредит</h2><p class="muted">Доход, действующие обязательства и параметры заявки</p></div></div><div class="form-grid">{% include 'core/fields.html' with form=finance_form %}</div></section>
+<div class="form-actions"><p class="muted">Изменения сохраняются после проверки полей.</p><button type="submit" class="btn btn-primary">Сохранить анкету</button></div>
+</form>{% endblock %}

@@ -35,6 +35,9 @@ def main():
     output = ROOT / "artifacts" / "runs" / args.stage
     output.mkdir(parents=True, exist_ok=True)
     environment = {**os.environ, "DJANGO_SECRET_KEY": "isolated-test-key-not-a-deployment-secret"}
+    environment["SCREENSHOT_DIR"] = str(output / "screenshots")
+    environment["PYTHONUTF8"] = "1"
+    environment["PYTHONIOENCODING"] = "utf-8"
     lint = subprocess.run(
         [sys.executable, "-m", "ruff", "check", ".", "--output-format=json"],
         cwd=ROOT,

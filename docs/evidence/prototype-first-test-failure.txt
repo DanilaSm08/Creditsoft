@@ -1,0 +1,130 @@
+.................................FF.                                     [100%]
+================================== FAILURES ===================================
+___ test_inclusive_financial_boundaries_and_payments_above_income[10000-6] ____
+
+amount = '10000', term = 6
+
+    @pytest.mark.requirement("CR-03.1", "CR-03.2")
+    @pytest.mark.parametrize(("amount", "term"), [("10000", 6), ("5000000", 84)])
+    def test_inclusive_financial_boundaries_and_payments_above_income(amount, term):
+        form = FinanceForm(
+            {
+                **VALID_DATA,
+                "requested_amount": amount,
+                "term_months": term,
+                "current_payments": "150000",
+            }
+        )
+>       assert form.is_valid(), form.errors
+               ^^^^^^^^^^^^^^^
+
+tests\test_questionnaire.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv\Lib\site-packages\django\forms\forms.py:206: in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+.venv\Lib\site-packages\django\forms\forms.py:201: in errors
+    self.full_clean()
+.venv\Lib\site-packages\django\forms\forms.py:339: in full_clean
+    self._post_clean()
+.venv\Lib\site-packages\django\forms\models.py:498: in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+.venv\Lib\site-packages\django\db\models\base.py:1674: in full_clean
+    self.validate_constraints(exclude=exclude)
+.venv\Lib\site-packages\django\db\models\base.py:1622: in validate_constraints
+    constraint.validate(model_class, self, exclude=exclude, using=using)
+.venv\Lib\site-packages\django\db\models\constraints.py:263: in validate
+    if not Q(self.condition).check(against, using=using):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\django\db\models\query_utils.py:191: in check
+    return compiler.execute_sql(SINGLE) is not None
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\django\db\models\sql\compiler.py:1621: in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\django\utils\asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\django\db\backends\base\base.py:320: in cursor
+    return self._cursor()
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <DatabaseWrapper vendor='sqlite' alias='default'>, name = None
+
+    def _cursor(self, name=None):
+        self.close_if_health_check_failed()
+>       self.ensure_connection()
+E       RuntimeError: Database access not allowed, use the "django_db" mark, or the "db" or "transactional_db" fixtures to enable it.
+
+.venv\Lib\site-packages\django\db\backends\base\base.py:296: RuntimeError
+__ test_inclusive_financial_boundaries_and_payments_above_income[5000000-84] __
+
+amount = '5000000', term = 84
+
+    @pytest.mark.requirement("CR-03.1", "CR-03.2")
+    @pytest.mark.parametrize(("amount", "term"), [("10000", 6), ("5000000", 84)])
+    def test_inclusive_financial_boundaries_and_payments_above_income(amount, term):
+        form = FinanceForm(
+            {
+                **VALID_DATA,
+                "requested_amount": amount,
+                "term_months": term,
+                "current_payments": "150000",
+            }
+        )
+>       assert form.is_valid(), form.errors
+               ^^^^^^^^^^^^^^^
+
+tests\test_questionnaire.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv\Lib\site-packages\django\forms\forms.py:206: in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+.venv\Lib\site-packages\django\forms\forms.py:201: in errors
+    self.full_clean()
+.venv\Lib\site-packages\django\forms\forms.py:339: in full_clean
+    self._post_clean()
+.venv\Lib\site-packages\django\forms\models.py:498: in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+.venv\Lib\site-packages\django\db\models\base.py:1674: in full_clean
+    self.validate_constraints(exclude=exclude)
+.venv\Lib\site-packages\django\db\models\base.py:1622: in validate_constraints
+    constraint.validate(model_class, self, exclude=exclude, using=using)
+.venv\Lib\site-packages\django\db\models\constraints.py:263: in validate
+    if not Q(self.condition).check(against, using=using):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\django\db\models\query_utils.py:191: in check
+    return compiler.execute_sql(SINGLE) is not None
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\django\db\models\sql\compiler.py:1621: in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\django\utils\asyncio.py:26: in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\django\db\backends\base\base.py:320: in cursor
+    return self._cursor()
+           ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <DatabaseWrapper vendor='sqlite' alias='default'>, name = None
+
+    def _cursor(self, name=None):
+        self.close_if_health_check_failed()
+>       self.ensure_connection()
+E       RuntimeError: Database access not allowed, use the "django_db" mark, or the "db" or "transactional_db" fixtures to enable it.
+
+.venv\Lib\site-packages\django\db\backends\base\base.py:296: RuntimeError
+=============================== tests coverage ================================
+______________ coverage: platform win32, python 3.12.10-final-0 _______________
+
+Coverage HTML written to dir D:\STUDY\ œŒ\CreditSoft\artifacts\runs\prototype\coverage
+Coverage XML written to file D:\STUDY\ œŒ\CreditSoft\artifacts\runs\prototype\coverage.xml
+Coverage JSON written to file D:\STUDY\ œŒ\CreditSoft\artifacts\runs\prototype\coverage.json
+Required test coverage of 85.0% reached. Total coverage: 100.00%
+- Generated html report: file:///D:/STUDY/%D0%9A%D0%9F%D0%9E/CreditSoft/artifacts/runs/prototype/tests.html -
+=========================== short test summary info ===========================
+FAILED tests/test_questionnaire.py::test_inclusive_financial_boundaries_and_payments_above_income[10000-6]
+FAILED tests/test_questionnaire.py::test_inclusive_financial_boundaries_and_payments_above_income[5000000-84]
+2 failed, 34 passed in 13.98s

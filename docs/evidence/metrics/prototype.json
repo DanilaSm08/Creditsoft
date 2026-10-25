@@ -1,0 +1,27 @@
+{
+  "stage": "prototype",
+  "recorded_at": "2026-10-25T14:49:37.296687+00:00",
+  "commit": "6b43942e49ca981a28b873b1baf06d1142f67d2c",
+  "passed": true,
+  "lint_issues": 0,
+  "format_exit": 0,
+  "migration_exit": 0,
+  "build_exit": 0,
+  "line_coverage_percent": 100.0,
+  "branch_coverage_percent": 100.0,
+  "tests": {
+    "tests": 36,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "passed": 36
+  },
+  "test_duration_seconds": 13.43,
+  "mean_complexity": 2.08,
+  "max_complexity": 5,
+  "source_files": 13,
+  "source_lines": 348,
+  "pipeline_seconds": 31.328,
+  "database": "SQLite",
+  "browser_included": false
+}
