@@ -1,6 +1,6 @@
 {
-  "recorded_at": "2026-10-25T15:25:35.403345+00:00",
-  "head": "c795ee4e7833170c2aacc9ef24d521dd7242a211",
+  "recorded_at": "2026-10-25T15:27:42.749060+00:00",
+  "head": "0fc88ccd22e5e7a6758736ec678479a793617fe7",
   "planned_counts": {
     "planned_additional": 6,
     "original": 24
@@ -13,30 +13,39 @@
   "closed_defects": 3,
   "planned_hours": 140.0,
   "volume": {
-    "tracked_files": 107,
+    "tracked_files": 140,
     "files_by_extension": {
       "(без расширения)": 5,
       ".yml": 2,
-      ".md": 7,
+      ".md": 10,
       ".yaml": 3,
-      ".py": 44,
+      ".py": 52,
       ".css": 3,
       ".js": 1,
       ".svg": 4,
       ".html": 7,
+      ".json": 18,
       ".txt": 5,
       ".log": 2,
-      ".json": 10,
+      ".csv": 1,
       ".jsonl": 1,
-      ".png": 11,
+      ".png": 23,
       ".conf": 1,
-      ".toml": 1
+      ".toml": 1,
+      ".ps1": 1
     },
-    "authored_source_files": 55,
-    "authored_physical_lines": 2267,
+    "authored_source_files": 63,
+    "authored_physical_lines": 3610,
     "definition": "Tracked .py/.html/.css/.js/.yaml/.yml; excludes vendored Bootstrap and generated migrations; includes tests/tools; physical lines include blanks/comments."
   },
   "commits": [
+    {
+      "sha": "0fc88ccd22e5e7a6758736ec678479a793617fe7",
+      "date": "2026-10-25T19:27:38+04:00",
+      "subject": "docs: prepare release evidence and laboratory reports",
+      "added": 5869,
+      "removed": 9
+    },
     {
       "sha": "46b719818df72d714ccdb579143353a78ad34ef2",
       "date": "2026-10-25T19:07:02+04:00",
@@ -119,9 +128,9 @@
       "planned_remaining_hours": 87.0,
       "actual_remaining_plan_hours": 2.0,
       "closed_issues": 32,
-      "commits": 3,
-      "added_lines": 6327,
-      "removed_lines": 7
+      "commits": 4,
+      "added_lines": 12196,
+      "removed_lines": 16
     },
     {
       "week": "2026-10-26",
@@ -279,7 +288,7 @@
         "RL-02"
       ],
       "started_at": "2026-10-25T15:15:01.493859+00:00",
-      "elapsed_seconds": 633.91,
+      "elapsed_seconds": 761.26,
       "snapshot_in_progress": true
     }
   ],
