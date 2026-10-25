@@ -1,0 +1,292 @@
+{
+  "recorded_at": "2026-10-25T15:25:35.403345+00:00",
+  "head": "c795ee4e7833170c2aacc9ef24d521dd7242a211",
+  "planned_counts": {
+    "planned_additional": 6,
+    "original": 24
+  },
+  "closed_counts": {
+    "planned_additional": 5,
+    "original": 24
+  },
+  "defects": 3,
+  "closed_defects": 3,
+  "planned_hours": 140.0,
+  "volume": {
+    "tracked_files": 107,
+    "files_by_extension": {
+      "(без расширения)": 5,
+      ".yml": 2,
+      ".md": 7,
+      ".yaml": 3,
+      ".py": 44,
+      ".css": 3,
+      ".js": 1,
+      ".svg": 4,
+      ".html": 7,
+      ".txt": 5,
+      ".log": 2,
+      ".json": 10,
+      ".jsonl": 1,
+      ".png": 11,
+      ".conf": 1,
+      ".toml": 1
+    },
+    "authored_source_files": 55,
+    "authored_physical_lines": 2267,
+    "definition": "Tracked .py/.html/.css/.js/.yaml/.yml; excludes vendored Bootstrap and generated migrations; includes tests/tools; physical lines include blanks/comments."
+  },
+  "commits": [
+    {
+      "sha": "46b719818df72d714ccdb579143353a78ad34ef2",
+      "date": "2026-10-25T19:07:02+04:00",
+      "subject": "feat: implement scoring catalogue and persistent assessment results",
+      "added": 2019,
+      "removed": 3
+    },
+    {
+      "sha": "f94a5bc43ab89b26a435ae7b2724980d99078138",
+      "date": "2026-10-25T18:53:22+04:00",
+      "subject": "feat: implement authenticated borrower questionnaire prototype",
+      "added": 3484,
+      "removed": 4
+    },
+    {
+      "sha": "6b43942e49ca981a28b873b1baf06d1142f67d2c",
+      "date": "2026-10-25T18:44:05+04:00",
+      "subject": "chore: initialize Django project and quality pipeline",
+      "added": 824,
+      "removed": 0
+    }
+  ],
+  "weeks": [
+    {
+      "week": "2026-09-07",
+      "planned_remaining_hours": 140.0,
+      "actual_remaining_plan_hours": 140.0,
+      "closed_issues": 0,
+      "commits": 0,
+      "added_lines": 0,
+      "removed_lines": 0
+    },
+    {
+      "week": "2026-09-14",
+      "planned_remaining_hours": 122.0,
+      "actual_remaining_plan_hours": 140.0,
+      "closed_issues": 0,
+      "commits": 0,
+      "added_lines": 0,
+      "removed_lines": 0
+    },
+    {
+      "week": "2026-09-21",
+      "planned_remaining_hours": 122.0,
+      "actual_remaining_plan_hours": 140.0,
+      "closed_issues": 0,
+      "commits": 0,
+      "added_lines": 0,
+      "removed_lines": 0
+    },
+    {
+      "week": "2026-09-28",
+      "planned_remaining_hours": 104.0,
+      "actual_remaining_plan_hours": 140.0,
+      "closed_issues": 0,
+      "commits": 0,
+      "added_lines": 0,
+      "removed_lines": 0
+    },
+    {
+      "week": "2026-10-05",
+      "planned_remaining_hours": 104.0,
+      "actual_remaining_plan_hours": 140.0,
+      "closed_issues": 0,
+      "commits": 0,
+      "added_lines": 0,
+      "removed_lines": 0
+    },
+    {
+      "week": "2026-10-12",
+      "planned_remaining_hours": 87.0,
+      "actual_remaining_plan_hours": 140.0,
+      "closed_issues": 0,
+      "commits": 0,
+      "added_lines": 0,
+      "removed_lines": 0
+    },
+    {
+      "week": "2026-10-19",
+      "planned_remaining_hours": 87.0,
+      "actual_remaining_plan_hours": 2.0,
+      "closed_issues": 32,
+      "commits": 3,
+      "added_lines": 6327,
+      "removed_lines": 7
+    },
+    {
+      "week": "2026-10-26",
+      "planned_remaining_hours": 69.0,
+      "actual_remaining_plan_hours": null,
+      "closed_issues": null,
+      "commits": null,
+      "added_lines": null,
+      "removed_lines": null
+    },
+    {
+      "week": "2026-11-02",
+      "planned_remaining_hours": 69.0,
+      "actual_remaining_plan_hours": null,
+      "closed_issues": null,
+      "commits": null,
+      "added_lines": null,
+      "removed_lines": null
+    },
+    {
+      "week": "2026-11-09",
+      "planned_remaining_hours": 52.0,
+      "actual_remaining_plan_hours": null,
+      "closed_issues": null,
+      "commits": null,
+      "added_lines": null,
+      "removed_lines": null
+    },
+    {
+      "week": "2026-11-16",
+      "planned_remaining_hours": 52.0,
+      "actual_remaining_plan_hours": null,
+      "closed_issues": null,
+      "commits": null,
+      "added_lines": null,
+      "removed_lines": null
+    },
+    {
+      "week": "2026-11-23",
+      "planned_remaining_hours": 34.0,
+      "actual_remaining_plan_hours": null,
+      "closed_issues": null,
+      "commits": null,
+      "added_lines": null,
+      "removed_lines": null
+    },
+    {
+      "week": "2026-11-30",
+      "planned_remaining_hours": 34.0,
+      "actual_remaining_plan_hours": null,
+      "closed_issues": null,
+      "commits": null,
+      "added_lines": null,
+      "removed_lines": null
+    },
+    {
+      "week": "2026-12-07",
+      "planned_remaining_hours": 17.0,
+      "actual_remaining_plan_hours": null,
+      "closed_issues": null,
+      "commits": null,
+      "added_lines": null,
+      "removed_lines": null
+    },
+    {
+      "week": "2026-12-14",
+      "planned_remaining_hours": 17.0,
+      "actual_remaining_plan_hours": null,
+      "closed_issues": null,
+      "commits": null,
+      "added_lines": null,
+      "removed_lines": null
+    },
+    {
+      "week": "2026-12-21",
+      "planned_remaining_hours": 0,
+      "actual_remaining_plan_hours": null,
+      "closed_issues": null,
+      "commits": null,
+      "added_lines": null,
+      "removed_lines": null
+    }
+  ],
+  "worklog": [
+    {
+      "phase": "infrastructure",
+      "tasks": [
+        "INF-01",
+        "RL-01"
+      ],
+      "started_at": "2026-10-25T14:35:57.890393+00:00",
+      "finished_at": "2026-10-25T14:44:28.264976+00:00",
+      "elapsed_seconds": 510.37,
+      "method": "observed assisted phase wall time; shared tasks are not separately timed"
+    },
+    {
+      "phase": "prototype",
+      "tasks": [
+        "CR-01.1",
+        "CR-01.2",
+        "CR-01.3",
+        "CR-02.1",
+        "CR-02.2",
+        "CR-02.3",
+        "CR-03.1",
+        "CR-03.2",
+        "CR-03.3",
+        "CR-04.1",
+        "CR-04.2",
+        "CR-04.3",
+        "PR-01"
+      ],
+      "started_at": "2026-10-25T14:44:28.406552+00:00",
+      "finished_at": "2026-10-25T14:53:22.088462+00:00",
+      "elapsed_seconds": 533.68,
+      "method": "observed assisted phase wall time; shared tasks are not separately timed"
+    },
+    {
+      "phase": "assessment",
+      "tasks": [
+        "CR-05.1",
+        "CR-05.2",
+        "CR-05.3",
+        "CR-06.1",
+        "CR-06.2",
+        "CR-06.3",
+        "CR-07.1",
+        "CR-07.2",
+        "CR-07.3",
+        "CR-08.1",
+        "CR-08.2",
+        "CR-08.3"
+      ],
+      "started_at": "2026-10-25T14:53:52.601523+00:00",
+      "finished_at": "2026-10-25T15:04:13.784089+00:00",
+      "elapsed_seconds": 621.18,
+      "method": "observed assisted phase wall time; shared tasks are not separately timed"
+    },
+    {
+      "phase": "validation",
+      "tasks": [
+        "QA-01",
+        "QA-02",
+        "INF-01",
+        "RL-01"
+      ],
+      "started_at": "2026-10-25T15:04:13.928463+00:00",
+      "finished_at": "2026-10-25T15:15:01.373812+00:00",
+      "elapsed_seconds": 647.45,
+      "method": "observed assisted phase wall time; shared tasks are not separately timed"
+    },
+    {
+      "phase": "release",
+      "tasks": [
+        "RL-02"
+      ],
+      "started_at": "2026-10-25T15:15:01.493859+00:00",
+      "elapsed_seconds": 633.91,
+      "snapshot_in_progress": true
+    }
+  ],
+  "limits": [
+    "YouGile was not exported; baseline is Lab_3.docx.",
+    "Git activity is local current-session history, not a retrospective semester history.",
+    "Line churn includes documentation/vendor where tracked; binary files have no line counts.",
+    "Time is assisted phase wall time, not student person-hours."
+  ]
+}

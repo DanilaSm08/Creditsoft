@@ -1,0 +1,35 @@
+{
+  "recorded_at": "2026-10-25T15:08:46.253271+00:00",
+  "defects": [
+    {
+      "id": "BUG-01",
+      "title": "CI не загружает артефакты по loopback-адресу Gitea",
+      "cause": "URL localhost:3030 относится к контейнеру задания, а не к серверу Gitea.",
+      "fix": "tools/ci_local_proxy.py отображает адрес внутри изолированного контейнера; последующие запуски CI сохранили артефакты.",
+      "evidence": "docs/evidence/ci-first-run.log; Gitea Actions runs 2–4",
+      "issue": 34,
+      "url": "http://localhost:3030/student/CreditSoft/issues/34",
+      "category": "defect"
+    },
+    {
+      "id": "BUG-02",
+      "title": "Метрики Windows прерываются на чтении журнала в неверной кодировке",
+      "cause": "Дочерний Python писал cp1251; tools/check.py читал UTF-8, возникал UnicodeDecodeError при выводе упавших тестов.",
+      "fix": "Дочерним процессам передаются PYTHONUTF8=1 и PYTHONIOENCODING=utf-8.",
+      "evidence": "tools/check.py; docs/evidence/metrics/prototype-browser.json; исходный вывод выполнения содержит UnicodeDecodeError",
+      "issue": 35,
+      "url": "http://localhost:3030/student/CreditSoft/issues/35",
+      "category": "defect"
+    },
+    {
+      "id": "BUG-03",
+      "title": "Изоляция Django и Playwright не настроена для проверок БД",
+      "cause": "Проверка ограничений ModelForm обращалась к БД без db fixture; завершение браузерного теста сталкивалось с активным циклом Playwright.",
+      "fix": "Добавлена db fixture; разрешение синхронных ORM-вызовов ограничено tests/conftest.py и изолированной тестовой БД.",
+      "evidence": "docs/evidence/prototype-first-test-failure.txt; docs/evidence/browser-first-teardown-failure.txt; 91 passed SQLite/PostgreSQL",
+      "issue": 36,
+      "url": "http://localhost:3030/student/CreditSoft/issues/36",
+      "category": "defect"
+    }
+  ]
+}
