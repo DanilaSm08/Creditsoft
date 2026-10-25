@@ -1,0 +1,24 @@
+name: CreditSoft CI
+on: [push, pull_request]
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    env:
+      DJANGO_SECRET_KEY: isolated-ci-key-not-for-deployment
+    steps:
+      - uses: https://github.com/actions/checkout@v4
+        with:
+          fetch-depth: 0
+          github-server-url: http://gitea:3000
+      - uses: https://github.com/actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-dev.txt
+      - run: python tools/commit_message.py
+      - run: python -m playwright install --with-deps chromium
+      - run: python tools/check.py --stage ci --e2e
+      - uses: https://github.com/actions/upload-artifact@v3
+        if: always()
+        with:
+          name: quality-evidence
+          path: artifacts/runs/ci

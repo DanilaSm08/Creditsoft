@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "creditsoft"
+version = "0.0.1"
+description = "Educational creditworthiness assessment"
+requires-python = ">=3.12"
+dependencies = ["Django>=5.2,<5.3", "psycopg[binary]>=3.3,<4"]
+
+[tool.setuptools.packages.find]
+include = ["creditsoft*", "core*"]
+
+[tool.setuptools.package-data]
+core = ["templates/**/*.html", "static/**/*"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+exclude = [".venv", "artifacts", "core/migrations"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "creditsoft.settings"
+python_files = ["test_*.py"]
+testpaths = ["tests"]
+addopts = "--strict-markers"
+markers = ["e2e: real browser user scenario", "requirement(*ids): backlog traceability"]
+
+[tool.coverage.run]
+branch = true
+source = ["core"]
+omit = ["*/migrations/*", "*/management/*"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 85

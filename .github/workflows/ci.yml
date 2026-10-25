@@ -1,0 +1,39 @@
+name: CreditSoft CI
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: creditsoft
+          POSTGRES_PASSWORD: isolated-ci-password
+          POSTGRES_DB: creditsoft
+        ports: ["5432:5432"]
+        options: --health-cmd="pg_isready -U creditsoft" --health-interval=5s --health-retries=12
+    env:
+      POSTGRES_HOST: localhost
+      POSTGRES_USER: creditsoft
+      POSTGRES_PASSWORD: isolated-ci-password
+      POSTGRES_DB: creditsoft
+      DJANGO_SECRET_KEY: isolated-ci-key-not-for-deployment
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements-dev.txt
+      - run: python tools/commit_message.py
+      - run: python -m playwright install --with-deps chromium
+      - run: python tools/check.py --stage ci --e2e
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: quality-evidence
+          path: artifacts/runs/ci

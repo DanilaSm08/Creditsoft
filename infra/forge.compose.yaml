@@ -1,0 +1,43 @@
+name: creditsoft-forge
+services:
+  gitea:
+    image: gitea/gitea:1.24.6
+    environment:
+      USER_UID: 1000
+      USER_GID: 1000
+      GITEA__database__DB_TYPE: sqlite3
+      GITEA__security__INSTALL_LOCK: "true"
+      GITEA__server__ROOT_URL: http://localhost:3030/
+      GITEA__server__LOCAL_ROOT_URL: http://gitea:3000/
+      GITEA__server__DOMAIN: localhost
+      GITEA__server__DISABLE_SSH: "true"
+      GITEA__service__DISABLE_REGISTRATION: "true"
+      GITEA__actions__ENABLED: "true"
+    ports:
+      - "127.0.0.1:3030:3000"
+    volumes:
+      - forge-data:/data
+    networks: [forge]
+    restart: unless-stopped
+  runner:
+    image: gitea/act_runner:0.2.13
+    profiles: [runner]
+    environment:
+      CONFIG_FILE: /config.yaml
+      GITEA_INSTANCE_URL: http://gitea:3000
+      GITEA_RUNNER_REGISTRATION_TOKEN_FILE: /registration_token
+      GITEA_RUNNER_NAME: creditsoft-local
+      GITEA_RUNNER_LABELS: ubuntu-latest:docker://catthehacker/ubuntu:act-22.04
+    volumes:
+      - runner-data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./runner.yaml:/config.yaml:ro
+      - ../.local/runner_token:/registration_token:ro
+    networks: [forge]
+    restart: unless-stopped
+networks:
+  forge:
+    name: creditsoft-forge
+volumes:
+  forge-data:
+  runner-data:
