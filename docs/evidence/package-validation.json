@@ -4,8 +4,8 @@
   "ci_archive_valid": true,
   "ci_metrics": {
     "stage": "ci",
-    "recorded_at": "2026-10-25T15:38:04.048956+00:00",
-    "commit": "67908d89b312ac5e267f6b9cdfe963986c7ed575",
+    "recorded_at": "2026-10-26T07:36:33.837903+00:00",
+    "commit": "566f13b8b47c726c3756fcd2d960e15446c71223",
     "working_tree_dirty": false,
     "passed": true,
     "lint_issues": 0,
@@ -21,13 +21,13 @@
       "skipped": 0,
       "passed": 91
     },
-    "test_duration_seconds": 28.887,
+    "test_duration_seconds": 25.147,
     "mean_complexity": 2.31,
     "max_complexity": 13,
     "source_files": 19,
     "source_lines": 593,
-    "pipeline_seconds": 40.408,
-    "database": "SQLite",
+    "pipeline_seconds": 30.228,
+    "database": "PostgreSQL",
     "browser_included": true
   }
 }
