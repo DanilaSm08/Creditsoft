@@ -1,4 +1,4 @@
-"""Attach reproducible packages, reports and verified evidence to local Gitea release."""
+"""Publish reports and packages to GitHub Releases and verify downloaded checksums."""
 
 import hashlib
 import json
@@ -6,8 +6,7 @@ import subprocess
 import zipfile
 from datetime import UTC, datetime
 
-import requests
-from forge import BASE, REPO, ROOT, api
+from forge import REPO, ROOT, api, request
 
 
 def digest(path):
@@ -41,7 +40,7 @@ def main():
             for path in (ROOT / folder).rglob("*"):
                 if path.is_file():
                     archive.write(path, str(path.relative_to(ROOT)).replace("\\", "/"))
-        for name in ["ci-evidence.zip", "ci-run-10.log"]:
+        for name in ["ci-evidence.zip", "github-ci-logs.zip"]:
             path = ROOT / "artifacts/reports" / name
             if path.exists():
                 archive.write(path, name)
@@ -52,27 +51,24 @@ def main():
     )
     assets.append(sums)
     release = api("GET", REPO + "/releases/tags/v1.0.0")
-    password = (ROOT / ".local/gitea_password").read_text().strip()
     existing = {
         asset["name"]: asset for asset in api("GET", REPO + f"/releases/{release['id']}/assets")
     }
     uploaded = []
     for path in assets:
         if path.name in existing:
-            api("DELETE", REPO + f"/releases/{release['id']}/assets/{existing[path.name]['id']}")
+            api("DELETE", REPO + f"/releases/assets/{existing[path.name]['id']}")
         with path.open("rb") as handle:
-            response = requests.post(
-                BASE + REPO + f"/releases/{release['id']}/assets",
+            response = request(
+                "POST",
+                release["upload_url"].split("{")[0],
                 params={"name": path.name},
-                auth=("student", password),
-                files={"attachment": (path.name, handle)},
-                timeout=120,
+                headers={"Content-Type": "application/octet-stream"},
+                data=handle,
             )
         response.raise_for_status()
         asset = response.json()
-        downloaded = requests.get(
-            asset["browser_download_url"], auth=("student", password), timeout=120
-        )
+        downloaded = request("GET", asset["url"], headers={"Accept": "application/octet-stream"})
         downloaded.raise_for_status()
         assert hashlib.sha256(downloaded.content).hexdigest() == digest(path)
         uploaded.append(

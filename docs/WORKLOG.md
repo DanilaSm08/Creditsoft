@@ -1,11 +1,13 @@
-# Execution record
+# Учёт выполнения
 
-The original plan contains 24 functional tasks (122 hours) and 6 supporting tasks
-(18 hours). Sources: Lab_1.docx through Lab_4.docx, unchanged by this implementation.
-Dates and elapsed durations in the generated evidence describe this assisted
-execution, not historical student working hours. No historical work is backdated.
+Я использовал план ЛР3: 24 функциональные задачи с оценкой 122 часа
+и шесть дополнительных задач с оценкой 18 часов.
 
-GitHub credentials returned HTTP 401 on the initial API check. The YouGile URL
-returns the JavaScript application shell without authenticated task data.
-Local Gitea provides the actual repository, pull requests, branch protection,
-issues and releases. GitHub-compatible workflow files are provided for migration.
+Задачи, pull requests, ветки и выпуски размещены в GitHub:
+https://github.com/DanilaSm08/Creditsoft.
+Соответствие задач проверкам находится в docs/evidence/acceptance.json.
+Состояния карточек получаю через GitHub API.
+
+Я записывал начало и окончание этапов в UTC командой tools/tasklog.py.
+elapsed_seconds показывает интервал между отметками, включая ожидание инструментов
+и паузы. Недельные графики строю по датам коммитов Git и закрытия задач GitHub.

@@ -19,7 +19,7 @@ def main():
         subjects = [Path(sys.argv[1]).read_text(encoding="utf-8").splitlines()[0]]
     else:
         subjects = subprocess.check_output(
-            ["git", "log", "--format=%s", "--no-merges"], text=True
+            ["git", "log", "--format=%s", "--no-merges"], text=True, encoding="utf-8"
         ).splitlines()
     invalid = [subject for subject in subjects if not valid(subject)]
     if invalid:

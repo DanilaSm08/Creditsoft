@@ -1,4 +1,4 @@
-"""Collect local forge / Git facts, traceability and dated charts for lab reports."""
+"""Collect GitHub and Git facts, traceability and dated charts for lab reports."""
 
 import csv
 import json
@@ -35,7 +35,7 @@ def main():
 
     sys.argv = ["forge.py", "export"]
     forge_main()
-    export = read("forge-export.json")
+    export = read("github-export.json")
     tasks = read("tasks.json")["tasks"]
     issues = {i["number"]: i for i in export["issues"] if not i.get("pull_request")}
     runs = ROOT / "artifacts/runs"
@@ -45,7 +45,7 @@ def main():
         "PR-01": ["docs/PROTOTYPE.md", "docs/images/prototype", "v0.1.0"],
         "INF-01": [
             "compose.yaml",
-            ".gitea/workflows/ci.yml",
+            ".github/workflows/ci.yml",
             "docs/evidence/protection-proof.json",
         ],
         "QA-01": ["docs/TESTING.md", "tests", "artifacts/runs/release/test-map.json"],
@@ -171,10 +171,10 @@ def main():
             "weeks": weeks,
             "worklog": worklog,
             "limits": [
-                "YouGile was not exported; baseline is Lab_3.docx.",
-                "Git activity is local current-session history, not a retrospective semester history.",
-                "Line churn includes documentation/vendor where tracked; binary files have no line counts.",
-                "Time is assisted phase wall time, not student person-hours.",
+                "План задач: Lab_3.docx.",
+                "Даты закрытия задач: GitHub API; даты коммитов: Git.",
+                "Строки Git включают все зафиксированные текстовые файлы.",
+                "Время этапа: интервал между отметками начала и окончания.",
             ],
         },
     )
@@ -187,7 +187,7 @@ def main():
         labels,
         [w["actual_remaining_plan_hours"] for w in weeks],
         "s-",
-        label="Остаток оценок по закрытию Gitea",
+        label="Остаток оценок по закрытию GitHub",
     )
     ax.set(
         ylabel="Плановые часы незакрытых задач",
@@ -216,7 +216,7 @@ def main():
     axes[1].bar(x, [w["added_lines"] for w in measured], color="#087e8b", label="Добавлено строк")
     axes[1].bar(x, [-w["removed_lines"] for w in measured], color="#c15c5c", label="Удалено строк")
     axes[1].legend()
-    axes[1].set_xlabel("Начало недели, 2026; до создания Gitea локальные события отсутствуют")
+    axes[1].set_xlabel("Начало недели, 2026")
     fig.tight_layout()
     fig.savefig(IMAGES / "weekly-activity.png", dpi=180)
     plt.close(fig)
