@@ -1,28 +1,286 @@
 {
+  "recorded_at": "2026-10-26T07:35:22.880938+00:00",
+  "repository": "DanilaSm08/Creditsoft",
   "pull_request": 32,
-  "head": "238beac2aa07170daf8e0279ebbb5b8a8e752036",
-  "statuses": [
+  "head": "a231f27a696622b4de51f49ff701c62e642a1bd1",
+  "checks": [
     {
-      "id": 2,
-      "status": "pending",
-      "target_url": "/student/CreditSoft/actions/runs/6/jobs/0",
-      "description": "Waiting to run",
-      "url": "http://localhost:3030/api/v1/repos/student/CreditSoft/statuses/238beac2aa07170daf8e0279ebbb5b8a8e752036",
-      "context": "CreditSoft CI / quality (push)",
-      "creator": null,
-      "created_at": "2026-10-25T14:58:51Z",
-      "updated_at": "2026-10-25T14:58:51Z"
+      "id": 121450858574,
+      "name": "quality",
+      "node_id": "CR_kwDOVXNdRs8AAAAcRwkITg",
+      "head_sha": "a231f27a696622b4de51f49ff701c62e642a1bd1",
+      "external_id": "c2339cc5-0193-5ba6-879e-097425d34d6c",
+      "url": "https://api.github.com/repos/DanilaSm08/Creditsoft/check-runs/121450858574",
+      "html_url": "https://github.com/DanilaSm08/Creditsoft/actions/runs/40286363312/job/121450858574",
+      "details_url": "https://github.com/DanilaSm08/Creditsoft/actions/runs/40286363312/job/121450858574",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-26T07:32:55Z",
+      "completed_at": "2026-10-26T07:34:01Z",
+      "output": {
+        "title": null,
+        "summary": null,
+        "text": null,
+        "annotations_count": 3,
+        "annotations_url": "https://api.github.com/repos/DanilaSm08/Creditsoft/check-runs/121450858574/annotations"
+      },
+      "check_suite": {
+        "id": 109183933044
+      },
+      "app": {
+        "id": 15368,
+        "client_id": "Iv1.05c79e9ad1f6bdfa",
+        "slug": "github-actions",
+        "node_id": "MDM6QXBwMTUzNjg=",
+        "owner": {
+          "login": "github",
+          "id": 9919,
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github",
+          "html_url": "https://github.com/github",
+          "followers_url": "https://api.github.com/users/github/followers",
+          "following_url": "https://api.github.com/users/github/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+          "organizations_url": "https://api.github.com/users/github/orgs",
+          "repos_url": "https://api.github.com/users/github/repos",
+          "events_url": "https://api.github.com/users/github/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github/received_events",
+          "type": "Organization",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "name": "GitHub Actions",
+        "description": "Automate your workflow from idea to production",
+        "external_url": "https://help.github.com/en/actions",
+        "html_url": "https://github.com/apps/github-actions",
+        "created_at": "2018-07-30T09:30:17Z",
+        "updated_at": "2026-06-18T16:17:48Z",
+        "permissions": {
+          "actions": "write",
+          "administration": "read",
+          "artifact_metadata": "write",
+          "attestations": "write",
+          "checks": "write",
+          "code_quality": "write",
+          "contents": "write",
+          "copilot_requests": "write",
+          "deployments": "write",
+          "discussions": "write",
+          "drives": "write",
+          "issues": "write",
+          "merge_queues": "write",
+          "metadata": "read",
+          "models": "read",
+          "packages": "write",
+          "pages": "write",
+          "pull_requests": "write",
+          "repository_hooks": "write",
+          "repository_projects": "write",
+          "security_events": "write",
+          "statuses": "write",
+          "vulnerability_alerts": "read"
+        },
+        "events": [
+          "branch_protection_rule",
+          "check_run",
+          "check_suite",
+          "create",
+          "delete",
+          "deployment",
+          "deployment_status",
+          "discussion",
+          "discussion_comment",
+          "fork",
+          "gollum",
+          "issues",
+          "issue_comment",
+          "label",
+          "merge_group",
+          "milestone",
+          "page_build",
+          "public",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "push",
+          "registry_package",
+          "release",
+          "repository",
+          "repository_dispatch",
+          "status",
+          "watch",
+          "workflow_dispatch",
+          "workflow_run"
+        ]
+      },
+      "pull_requests": [
+        {
+          "url": "https://api.github.com/repos/DanilaSm08/Creditsoft/pulls/32",
+          "id": 5013730852,
+          "number": 32,
+          "head": {
+            "ref": "ci/protection-probe",
+            "sha": "a231f27a696622b4de51f49ff701c62e642a1bd1",
+            "repo": {
+              "id": 1433623878,
+              "url": "https://api.github.com/repos/DanilaSm08/Creditsoft",
+              "name": "Creditsoft"
+            }
+          },
+          "base": {
+            "ref": "main",
+            "sha": "55c7b307ecf200c196ec7344449cdfdb7374e1de",
+            "repo": {
+              "id": 1433623878,
+              "url": "https://api.github.com/repos/DanilaSm08/Creditsoft",
+              "name": "Creditsoft"
+            }
+          }
+        }
+      ]
     },
     {
-      "id": 3,
-      "status": "failure",
-      "target_url": "/student/CreditSoft/actions/runs/5/jobs/0",
-      "description": "Failing after 3m2s",
-      "url": "http://localhost:3030/api/v1/repos/student/CreditSoft/statuses/238beac2aa07170daf8e0279ebbb5b8a8e752036",
-      "context": "CreditSoft CI / quality (pull_request)",
-      "creator": null,
-      "created_at": "2026-10-25T15:05:09Z",
-      "updated_at": "2026-10-25T15:05:09Z"
+      "id": 121450844749,
+      "name": "quality",
+      "node_id": "CR_kwDOVXNdRs8AAAAcRwjSTQ",
+      "head_sha": "a231f27a696622b4de51f49ff701c62e642a1bd1",
+      "external_id": "161fd177-0018-5020-9555-3d16fd68028d",
+      "url": "https://api.github.com/repos/DanilaSm08/Creditsoft/check-runs/121450844749",
+      "html_url": "https://github.com/DanilaSm08/Creditsoft/actions/runs/40286358866/job/121450844749",
+      "details_url": "https://github.com/DanilaSm08/Creditsoft/actions/runs/40286358866/job/121450844749",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-26T07:32:01Z",
+      "completed_at": "2026-10-26T07:33:03Z",
+      "output": {
+        "title": null,
+        "summary": null,
+        "text": null,
+        "annotations_count": 3,
+        "annotations_url": "https://api.github.com/repos/DanilaSm08/Creditsoft/check-runs/121450844749/annotations"
+      },
+      "check_suite": {
+        "id": 109183920995
+      },
+      "app": {
+        "id": 15368,
+        "client_id": "Iv1.05c79e9ad1f6bdfa",
+        "slug": "github-actions",
+        "node_id": "MDM6QXBwMTUzNjg=",
+        "owner": {
+          "login": "github",
+          "id": 9919,
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjk5MTk=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/9919?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github",
+          "html_url": "https://github.com/github",
+          "followers_url": "https://api.github.com/users/github/followers",
+          "following_url": "https://api.github.com/users/github/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github/subscriptions",
+          "organizations_url": "https://api.github.com/users/github/orgs",
+          "repos_url": "https://api.github.com/users/github/repos",
+          "events_url": "https://api.github.com/users/github/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github/received_events",
+          "type": "Organization",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "name": "GitHub Actions",
+        "description": "Automate your workflow from idea to production",
+        "external_url": "https://help.github.com/en/actions",
+        "html_url": "https://github.com/apps/github-actions",
+        "created_at": "2018-07-30T09:30:17Z",
+        "updated_at": "2026-06-18T16:17:48Z",
+        "permissions": {
+          "actions": "write",
+          "administration": "read",
+          "artifact_metadata": "write",
+          "attestations": "write",
+          "checks": "write",
+          "code_quality": "write",
+          "contents": "write",
+          "copilot_requests": "write",
+          "deployments": "write",
+          "discussions": "write",
+          "drives": "write",
+          "issues": "write",
+          "merge_queues": "write",
+          "metadata": "read",
+          "models": "read",
+          "packages": "write",
+          "pages": "write",
+          "pull_requests": "write",
+          "repository_hooks": "write",
+          "repository_projects": "write",
+          "security_events": "write",
+          "statuses": "write",
+          "vulnerability_alerts": "read"
+        },
+        "events": [
+          "branch_protection_rule",
+          "check_run",
+          "check_suite",
+          "create",
+          "delete",
+          "deployment",
+          "deployment_status",
+          "discussion",
+          "discussion_comment",
+          "fork",
+          "gollum",
+          "issues",
+          "issue_comment",
+          "label",
+          "merge_group",
+          "milestone",
+          "page_build",
+          "public",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "push",
+          "registry_package",
+          "release",
+          "repository",
+          "repository_dispatch",
+          "status",
+          "watch",
+          "workflow_dispatch",
+          "workflow_run"
+        ]
+      },
+      "pull_requests": [
+        {
+          "url": "https://api.github.com/repos/DanilaSm08/Creditsoft/pulls/32",
+          "id": 5013730852,
+          "number": 32,
+          "head": {
+            "ref": "ci/protection-probe",
+            "sha": "a231f27a696622b4de51f49ff701c62e642a1bd1",
+            "repo": {
+              "id": 1433623878,
+              "url": "https://api.github.com/repos/DanilaSm08/Creditsoft",
+              "name": "Creditsoft"
+            }
+          },
+          "base": {
+            "ref": "main",
+            "sha": "55c7b307ecf200c196ec7344449cdfdb7374e1de",
+            "repo": {
+              "id": 1433623878,
+              "url": "https://api.github.com/repos/DanilaSm08/Creditsoft",
+              "name": "Creditsoft"
+            }
+          }
+        }
+      ]
     }
   ],
   "invalid_commit": {
@@ -31,14 +289,14 @@
   },
   "direct_push": {
     "returncode": 1,
-    "output": "remote: \nremote: error:        \nremote: error: Not allowed to push to protected branch main        \nremote: error:        \nTo http://localhost:3030/student/CreditSoft.git\n ! [remote rejected] HEAD -> main (pre-receive hook declined)\nerror: failed to push some refs to 'http://localhost:3030/student/CreditSoft.git'\nTraceback (most recent call last):\n  File \"D:\\STUDY\\КПО\\CreditSoft\\tools\\forge.py\", line 201, in <module>\n    main()\n  File \"D:\\STUDY\\КПО\\CreditSoft\\tools\\forge.py\", line 129, in main\n    git(\"push\", *args.arguments)\n  File \"D:\\STUDY\\КПО\\CreditSoft\\tools\\forge.py\", line 38, in git\n    subprocess.run([\"git\", *arguments], cwd=ROOT, env=environment, check=True)\n  File \"C:\\Users\\danil\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['git', 'push', 'origin', 'HEAD:main']' returned non-zero exit status 1.\n",
-    "main_before": "c795ee4e7833170c2aacc9ef24d521dd7242a211",
-    "main_after": "c795ee4e7833170c2aacc9ef24d521dd7242a211",
-    "head": "0fc88ccd22e5e7a6758736ec678479a793617fe7",
-    "fast_forward_candidate": true
+    "output": "remote: error: GH006: Protected branch update failed for refs/heads/main.        \nremote: \nremote: - Changes must be made through a pull request.        \nremote: \nremote: - Required status check \"quality\" is expected.        \nTo https://github.com/DanilaSm08/Creditsoft.git\n ! [remote rejected] 27c36147383d1b50f7fc2515b7a575f21efa8262 -> main (protected branch hook declined)\nerror: failed to push some refs to 'https://github.com/DanilaSm08/Creditsoft.git'\n",
+    "head": "27c36147383d1b50f7fc2515b7a575f21efa8262",
+    "main_before": "566f13b8b47c726c3756fcd2d960e15446c71223",
+    "fast_forward_candidate": true,
+    "main_after": "566f13b8b47c726c3756fcd2d960e15446c71223"
   },
   "merge_before_checks": {
     "blocked": true,
-    "output": "Gitea POST /repos/student/CreditSoft/pulls/32/merge: 405: {\"message\":\"Not all required status checks successful\",\"url\":\"http://localhost:3030/api/swagger\"}\n"
+    "output": "GitHub PUT /repos/DanilaSm08/Creditsoft/pulls/32/merge: 405: {\"message\":\"Required status check \\\"quality\\\" is expected.\",\"documentation_url\":\"https://docs.github.com/articles/about-protected-branches\",\"status\":\"405\"}"
   }
 }

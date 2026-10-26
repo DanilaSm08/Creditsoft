@@ -1,8 +1,0 @@
-log:
-  level: info
-runner:
-  capacity: 1
-  timeout: 30m
-container:
-  network: creditsoft-forge
-  privileged: false

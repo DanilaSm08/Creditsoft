@@ -2,7 +2,7 @@
 
 import json
 
-from forge import REPO, ROOT, api
+from forge import REPO, ROOT, api, pages
 
 
 def main():
@@ -12,10 +12,11 @@ def main():
         for block in source["blocks"]
         if block.get("table", [[]])[0][:2] == ["№", "ID"]
     )
-    existing = api("GET", REPO + "/issues?state=all&limit=100&type=issues")
+    existing = pages(REPO + "/issues", state="all")
     records = []
     for row in table[1:]:
         _, identifier, title, priority, hours, depends, sprint = row
+        title = title.replace("учебной ", "")
         issue = next(
             (item for item in existing if item["title"].startswith(identifier + " ")), None
         )
@@ -25,8 +26,14 @@ def main():
                 REPO + "/issues",
                 json={
                     "title": f"{identifier} {title}",
-                    "body": f"Источник: таблица плана ЛР3.\n\nПлан: {hours} ч. Приоритет: {priority}. Спринт: {sprint}. Зависимости: {depends}.\n\nПеренос плана для фактического выполнения ЛР5–8; даты YouGile не восстанавливались.",
+                    "body": f"Источник: таблица плана ЛР3.\n\nПлан: {hours} ч. Приоритет: {priority}. Спринт: {sprint}. Зависимости: {depends}.\n\nЯ выполнил задачу по плану лабораторной работы 3.",
                 },
+            )
+        elif issue["title"] != f"{identifier} {title}":
+            issue = api(
+                "PATCH",
+                REPO + f"/issues/{issue['number']}",
+                json={"title": f"{identifier} {title}"},
             )
         records.append(
             {

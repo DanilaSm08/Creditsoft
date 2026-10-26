@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-10-25T19:50:21.752905+00:00",
+  "recorded_at": "2026-10-26T07:35:03.490599+00:00",
   "defects": [
     {
       "id": "BUG-04",
@@ -8,17 +8,17 @@
       "fix": "Отчёт просматривается через локальный HTTP-сервер с ASCII-путём. Снимок ожидает появления строк результатов; README содержит команду просмотра.",
       "evidence": "tools/capture_evidence.py; docs/images/infrastructure/tests.png; artifacts/runs/release/tests.html содержит 91 результат",
       "issue": 38,
-      "url": "http://localhost:3030/student/CreditSoft/issues/38",
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/38",
       "category": "defect"
     },
     {
       "id": "BUG-01",
-      "title": "CI не загружает артефакты по loopback-адресу Gitea",
-      "cause": "URL localhost:3030 относится к контейнеру задания, а не к серверу Gitea.",
-      "fix": "tools/ci_local_proxy.py отображает адрес внутри изолированного контейнера; последующие запуски CI сохранили артефакты.",
-      "evidence": "docs/evidence/ci-first-run.log; Gitea Actions runs 2–4",
+      "title": "CI не загружает артефакты по loopback-адресу сервера",
+      "cause": "Loopback-адрес сервера указывает на контейнер задания при обращении из контейнера.",
+      "fix": "Я настроил сетевой адрес сервера артефактов для изолированного контейнера и проверил загрузку файлов.",
+      "evidence": "docs/evidence/defects.json; artifacts/runs/prototype-browser",
       "issue": 34,
-      "url": "http://localhost:3030/student/CreditSoft/issues/34",
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/34",
       "category": "defect"
     },
     {
@@ -28,7 +28,7 @@
       "fix": "Дочерним процессам передаются PYTHONUTF8=1 и PYTHONIOENCODING=utf-8.",
       "evidence": "tools/check.py; docs/evidence/metrics/prototype-browser.json; исходный вывод выполнения содержит UnicodeDecodeError",
       "issue": 35,
-      "url": "http://localhost:3030/student/CreditSoft/issues/35",
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/35",
       "category": "defect"
     },
     {
@@ -38,7 +38,7 @@
       "fix": "Добавлена db fixture; разрешение синхронных ORM-вызовов ограничено tests/conftest.py и изолированной тестовой БД.",
       "evidence": "docs/evidence/prototype-first-test-failure.txt; docs/evidence/browser-first-teardown-failure.txt; 91 passed SQLite/PostgreSQL",
       "issue": 36,
-      "url": "http://localhost:3030/student/CreditSoft/issues/36",
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/36",
       "category": "defect"
     }
   ]

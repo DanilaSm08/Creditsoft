@@ -1,0 +1,28 @@
+{
+  "stage": "ci",
+  "recorded_at": "2026-10-26T07:36:33.837903+00:00",
+  "commit": "566f13b8b47c726c3756fcd2d960e15446c71223",
+  "working_tree_dirty": false,
+  "passed": true,
+  "lint_issues": 0,
+  "format_exit": 0,
+  "migration_exit": 0,
+  "build_exit": 0,
+  "line_coverage_percent": 100.0,
+  "branch_coverage_percent": 100.0,
+  "tests": {
+    "tests": 91,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "passed": 91
+  },
+  "test_duration_seconds": 25.147,
+  "mean_complexity": 2.31,
+  "max_complexity": 13,
+  "source_files": 19,
+  "source_lines": 593,
+  "pipeline_seconds": 30.228,
+  "database": "PostgreSQL",
+  "browser_included": true
+}

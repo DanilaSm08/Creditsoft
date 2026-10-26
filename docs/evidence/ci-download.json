@@ -1,1 +1,8 @@
-{"run": 14, "head": "67908d89b312ac5e267f6b9cdfe963986c7ed575", "artifact": "quality-evidence", "bytes": 898871}
+{
+  "run": 15,
+  "run_id": 40286540177,
+  "head": "566f13b8b47c726c3756fcd2d960e15446c71223",
+  "url": "https://github.com/DanilaSm08/Creditsoft/actions/runs/40286540177",
+  "artifact": "quality-evidence",
+  "bytes": 947561
+}

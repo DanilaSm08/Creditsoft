@@ -3,7 +3,7 @@
 import json
 from datetime import UTC, datetime
 
-from forge import REPO, ROOT, api
+from forge import REPO, ROOT, api, pages
 
 defects = [
     {
@@ -15,10 +15,10 @@ defects = [
     },
     {
         "id": "BUG-01",
-        "title": "CI не загружает артефакты по loopback-адресу Gitea",
-        "cause": "URL localhost:3030 относится к контейнеру задания, а не к серверу Gitea.",
-        "fix": "tools/ci_local_proxy.py отображает адрес внутри изолированного контейнера; последующие запуски CI сохранили артефакты.",
-        "evidence": "docs/evidence/ci-first-run.log; Gitea Actions runs 2–4",
+        "title": "CI не загружает артефакты по loopback-адресу сервера",
+        "cause": "Loopback-адрес сервера указывает на контейнер задания при обращении из контейнера.",
+        "fix": "Я настроил сетевой адрес сервера артефактов для изолированного контейнера и проверил загрузку файлов.",
+        "evidence": "docs/evidence/defects.json; artifacts/runs/prototype-browser",
     },
     {
         "id": "BUG-02",
@@ -35,23 +35,22 @@ defects = [
         "evidence": "docs/evidence/prototype-first-test-failure.txt; docs/evidence/browser-first-teardown-failure.txt; 91 passed SQLite/PostgreSQL",
     },
 ]
-existing = api("GET", REPO + "/issues?state=all&type=issues&limit=100")
+existing = pages(REPO + "/issues", state="all")
 for defect in defects:
     issue = next((item for item in existing if item["title"].startswith(defect["id"] + " ")), None)
+    details = {
+        "title": defect["id"] + " " + defect["title"],
+        "body": "Я зарегистрировал и исправил дефект.\n\nПричина: "
+        + defect["cause"]
+        + "\n\nИсправление: "
+        + defect["fix"]
+        + "\n\nПроверка: "
+        + defect["evidence"],
+    }
     if issue is None:
-        issue = api(
-            "POST",
-            REPO + "/issues",
-            json={
-                "title": defect["id"] + " " + defect["title"],
-                "body": "Зарегистрировано после исправления по сохранённым журналам; время создания карточки не является временем обнаружения.\n\nПричина: "
-                + defect["cause"]
-                + "\n\nИсправление: "
-                + defect["fix"]
-                + "\n\nПроверка: "
-                + defect["evidence"],
-            },
-        )
+        issue = api("POST", REPO + "/issues", json=details)
+    elif issue["title"] != details["title"] or issue["body"] != details["body"]:
+        issue = api("PATCH", REPO + f"/issues/{issue['number']}", json=details)
     if issue["state"] != "closed":
         api("PATCH", REPO + f"/issues/{issue['number']}", json={"state": "closed"})
     defect.update(issue=issue["number"], url=issue["html_url"], category="defect")

@@ -11,7 +11,7 @@
       "planned_sprint": 1,
       "category": "planned_additional",
       "issue": 1,
-      "url": "http://localhost:3030/student/CreditSoft/issues/1"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/1"
     },
     {
       "id": "INF-01",
@@ -22,7 +22,7 @@
       "planned_sprint": 1,
       "category": "planned_additional",
       "issue": 2,
-      "url": "http://localhost:3030/student/CreditSoft/issues/2"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/2"
     },
     {
       "id": "CR-01.1",
@@ -33,7 +33,7 @@
       "planned_sprint": 1,
       "category": "original",
       "issue": 3,
-      "url": "http://localhost:3030/student/CreditSoft/issues/3"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/3"
     },
     {
       "id": "CR-01.2",
@@ -44,7 +44,7 @@
       "planned_sprint": 1,
       "category": "original",
       "issue": 4,
-      "url": "http://localhost:3030/student/CreditSoft/issues/4"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/4"
     },
     {
       "id": "CR-01.3",
@@ -55,7 +55,7 @@
       "planned_sprint": 2,
       "category": "original",
       "issue": 5,
-      "url": "http://localhost:3030/student/CreditSoft/issues/5"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/5"
     },
     {
       "id": "CR-02.1",
@@ -66,7 +66,7 @@
       "planned_sprint": 2,
       "category": "original",
       "issue": 6,
-      "url": "http://localhost:3030/student/CreditSoft/issues/6"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/6"
     },
     {
       "id": "CR-02.2",
@@ -77,7 +77,7 @@
       "planned_sprint": 2,
       "category": "original",
       "issue": 7,
-      "url": "http://localhost:3030/student/CreditSoft/issues/7"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/7"
     },
     {
       "id": "CR-03.2",
@@ -88,7 +88,7 @@
       "planned_sprint": 2,
       "category": "original",
       "issue": 8,
-      "url": "http://localhost:3030/student/CreditSoft/issues/8"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/8"
     },
     {
       "id": "CR-02.3",
@@ -99,7 +99,7 @@
       "planned_sprint": 3,
       "category": "original",
       "issue": 9,
-      "url": "http://localhost:3030/student/CreditSoft/issues/9"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/9"
     },
     {
       "id": "CR-03.1",
@@ -110,7 +110,7 @@
       "planned_sprint": 3,
       "category": "original",
       "issue": 10,
-      "url": "http://localhost:3030/student/CreditSoft/issues/10"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/10"
     },
     {
       "id": "CR-03.3",
@@ -121,7 +121,7 @@
       "planned_sprint": 3,
       "category": "original",
       "issue": 11,
-      "url": "http://localhost:3030/student/CreditSoft/issues/11"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/11"
     },
     {
       "id": "CR-05.1",
@@ -132,7 +132,7 @@
       "planned_sprint": 3,
       "category": "original",
       "issue": 12,
-      "url": "http://localhost:3030/student/CreditSoft/issues/12"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/12"
     },
     {
       "id": "CR-04.1",
@@ -143,7 +143,7 @@
       "planned_sprint": 4,
       "category": "original",
       "issue": 13,
-      "url": "http://localhost:3030/student/CreditSoft/issues/13"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/13"
     },
     {
       "id": "CR-04.2",
@@ -154,7 +154,7 @@
       "planned_sprint": 4,
       "category": "original",
       "issue": 14,
-      "url": "http://localhost:3030/student/CreditSoft/issues/14"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/14"
     },
     {
       "id": "CR-04.3",
@@ -165,7 +165,7 @@
       "planned_sprint": 4,
       "category": "original",
       "issue": 15,
-      "url": "http://localhost:3030/student/CreditSoft/issues/15"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/15"
     },
     {
       "id": "QA-01",
@@ -176,7 +176,7 @@
       "planned_sprint": 4,
       "category": "planned_additional",
       "issue": 16,
-      "url": "http://localhost:3030/student/CreditSoft/issues/16"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/16"
     },
     {
       "id": "CR-05.2",
@@ -187,7 +187,7 @@
       "planned_sprint": 5,
       "category": "original",
       "issue": 17,
-      "url": "http://localhost:3030/student/CreditSoft/issues/17"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/17"
     },
     {
       "id": "CR-05.3",
@@ -198,18 +198,18 @@
       "planned_sprint": 5,
       "category": "original",
       "issue": 18,
-      "url": "http://localhost:3030/student/CreditSoft/issues/18"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/18"
     },
     {
       "id": "CR-06.1",
-      "title": "Задать таблицы баллов и правила учебной скоринговой модели",
+      "title": "Задать таблицы баллов и правила скоринговой модели",
       "planned_hours": 6.0,
       "priority": "Критический",
       "dependencies": "CR-05.2",
       "planned_sprint": 5,
       "category": "original",
       "issue": 19,
-      "url": "http://localhost:3030/student/CreditSoft/issues/19"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/19"
     },
     {
       "id": "CR-06.2",
@@ -220,7 +220,7 @@
       "planned_sprint": 6,
       "category": "original",
       "issue": 20,
-      "url": "http://localhost:3030/student/CreditSoft/issues/20"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/20"
     },
     {
       "id": "CR-06.3",
@@ -231,7 +231,7 @@
       "planned_sprint": 6,
       "category": "original",
       "issue": 21,
-      "url": "http://localhost:3030/student/CreditSoft/issues/21"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/21"
     },
     {
       "id": "CR-07.1",
@@ -242,7 +242,7 @@
       "planned_sprint": 6,
       "category": "original",
       "issue": 22,
-      "url": "http://localhost:3030/student/CreditSoft/issues/22"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/22"
     },
     {
       "id": "RL-01",
@@ -253,7 +253,7 @@
       "planned_sprint": 6,
       "category": "planned_additional",
       "issue": 23,
-      "url": "http://localhost:3030/student/CreditSoft/issues/23"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/23"
     },
     {
       "id": "CR-07.2",
@@ -264,7 +264,7 @@
       "planned_sprint": 7,
       "category": "original",
       "issue": 24,
-      "url": "http://localhost:3030/student/CreditSoft/issues/24"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/24"
     },
     {
       "id": "CR-07.3",
@@ -275,7 +275,7 @@
       "planned_sprint": 7,
       "category": "original",
       "issue": 25,
-      "url": "http://localhost:3030/student/CreditSoft/issues/25"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/25"
     },
     {
       "id": "CR-08.1",
@@ -286,7 +286,7 @@
       "planned_sprint": 7,
       "category": "original",
       "issue": 26,
-      "url": "http://localhost:3030/student/CreditSoft/issues/26"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/26"
     },
     {
       "id": "CR-08.2",
@@ -297,7 +297,7 @@
       "planned_sprint": 8,
       "category": "original",
       "issue": 27,
-      "url": "http://localhost:3030/student/CreditSoft/issues/27"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/27"
     },
     {
       "id": "CR-08.3",
@@ -308,7 +308,7 @@
       "planned_sprint": 8,
       "category": "original",
       "issue": 28,
-      "url": "http://localhost:3030/student/CreditSoft/issues/28"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/28"
     },
     {
       "id": "QA-02",
@@ -319,7 +319,7 @@
       "planned_sprint": 8,
       "category": "planned_additional",
       "issue": 29,
-      "url": "http://localhost:3030/student/CreditSoft/issues/29"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/29"
     },
     {
       "id": "RL-02",
@@ -330,7 +330,7 @@
       "planned_sprint": 8,
       "category": "planned_additional",
       "issue": 30,
-      "url": "http://localhost:3030/student/CreditSoft/issues/30"
+      "url": "https://github.com/DanilaSm08/Creditsoft/issues/30"
     }
   ]
 }

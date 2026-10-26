@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 {% block title %}Вход — CreditSoft{% endblock %}
 {% block content %}
-<div class="auth-layout"><section class="auth-intro"><p class="eyebrow">ЛИЧНЫЙ КАБИНЕТ</p><h1>Ваша анкета.<br>Ваша оценка.</h1><p>Сохраните данные заёмщика, рассчитайте текущую долговую нагрузку и сравните учебные кредитные предложения.</p><div class="intro-note">Оценка не является решением банка о выдаче кредита.</div></section>
+<div class="auth-layout"><section class="auth-intro"><p class="eyebrow">ЛИЧНЫЙ КАБИНЕТ</p><h1>Ваша анкета.<br>Ваша оценка.</h1><p>Сохраните данные заёмщика, рассчитайте текущую долговую нагрузку и сравните кредитные предложения из каталога.</p><div class="intro-note">При расчёте учитываются доход, кредитные платежи, стаж, сумма и срок кредита.</div></section>
 <section class="panel auth-panel"><h2>Вход</h2><p class="muted">Введите логин и пароль.</p>
 <form method="post" novalidate>{% csrf_token %}
 {% if form.non_field_errors %}<div class="error-summary" role="alert">{{ form.non_field_errors }}</div>{% endif %}

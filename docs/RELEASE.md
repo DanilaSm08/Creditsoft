@@ -1,41 +1,55 @@
-# Релиз и восстановление
+# Выпуск и восстановление
 
-Версия прототипа — v0.1.0; завершённое приложение — v1.0.0. Теги аннотированные.
-В main попадает только прошедший CI PR. Сборки, HTML/JUnit/coverage, метрики и отчёты
-приложены к релизу; контрольные суммы находятся в SHA256SUMS.txt.
+Я отметил прототип тегом v0.1.0, завершённую версию — v1.0.0.
+Выпуски находятся в [GitHub Releases](https://github.com/DanilaSm08/Creditsoft/releases).
+Для v1.0.0 я подготовил wheel, sdist, архив исходников, архив результатов проверок,
+отчёты DOCX/PDF и SHA256SUMS.txt. Скрипт tools/publish_release.py загружает файлы
+и повторно скачивает их для проверки SHA-256.
 
-Приложение использует Django 5.2, Python 3.12, PostgreSQL 16, Nginx 1.28 и Gunicorn.
-Сеть браузер → Nginx:8080 → Gunicorn:8000 → PostgreSQL:5432.
-Внутренние модули Django вызываются в одном процессе. PostgreSQL не доступен браузеру.
-Локальное стендовое соединение HTTP; TLS и доменное имя в этот учебный стенд не входят.
+## Развёртывание
 
-Перед обновлением: сохранить копию БД через `tools/backup.py backup` и отметить текущий
-тег/образ. Переключиться на нужный тег в отдельной копии репозитория, проверить миграции
-и выполнить `docker compose up -d --build`. Проверить `/health/`, вход, сохранение анкеты,
-расчёт и чтение предыдущего результата (`tools/smoke.py`). Статика собирается автоматически.
+Я использовал Django 5.2, Python 3.12, PostgreSQL 16, Nginx и Gunicorn.
+Запрос проходит браузер → Nginx:8080 → Gunicorn:8000 → PostgreSQL:5432.
+Модули Django взаимодействуют внутри приложения.
+
+```powershell
+.\.venv\Scripts\python.exe tools/bootstrap.py
+docker compose up -d --build
+.\.venv\Scripts\python.exe tools/smoke.py
+docker compose logs --tail 100 web nginx
+```
+
+Я проверил /health/, вход, сохранение анкеты, расчёт, предыдущий результат
+и сохранность данных после перезапуска.
+
+## Резервное копирование
 
 ```powershell
 .\.venv\Scripts\python.exe tools/backup.py backup
-docker compose logs --tail 100 web nginx
-.\.venv\Scripts\python.exe tools/smoke.py
 ```
 
-`backup.py` сохраняет custom-format pg_dump в `.local/backups/` и проверяет оглавление.
-Копия содержит данные пользователей и не публикуется. Восстановление заменяет данные
-выбранной БД, поэтому выполняется только явной командой с аргументом `--replace-database`:
+Скрипт сохраняет custom-format pg_dump в .local/backups и проверяет оглавление
+командой pg_restore --list. Копия содержит данные пользователей и остаётся локально.
+
+## Восстановление
 
 ```powershell
 docker compose stop web
 .\.venv\Scripts\python.exe tools/backup.py restore .local/backups/<file>.dump --replace-database
 docker compose start web
+.\.venv\Scripts\python.exe tools/smoke.py
 ```
 
-Откат к совместимому образу возможен без восстановления БД. Если схема изменилась
-несовместимо, сначала остановить web, восстановить соответствующую копию и запустить
-версию приложения, для которой эта схема создавалась. Не следует запускать старый код
-поверх несовместимых миграций. В этой работе выполнено создание и проверка копии;
-разрушительное восстановление рабочей БД не выполнялось.
+Восстановление заменяет содержимое выбранной БД. При откате используется версия
+приложения, совместимая со схемой сохранённой копии.
 
-Ограничения релиза: одиночный локальный узел, учебные данные и правила, нет банковских
-интеграций, почтовой доставки, публичного TLS, нагрузочной аттестации и внешнего аудита.
-Эти функции не входят в 30 задач исходного плана ЛР3.
+## Формирование отчётов
+
+```powershell
+.\.venv\Scripts\python.exe tools/collect_evidence.py
+.\.venv\Scripts\python.exe tools/capture_evidence.py
+.\.venv\Scripts\python.exe tools/build_reports.py
+powershell -File tools/render_reports_docker.ps1
+.\.venv\Scripts\python.exe tools/inspect_reports.py
+.\.venv\Scripts\python.exe tools/publish_release.py
+```

@@ -1,7 +1,7 @@
 {
   "stage": "release",
-  "recorded_at": "2026-10-25T15:24:33.511811+00:00",
-  "commit": "c795ee4e7833170c2aacc9ef24d521dd7242a211",
+  "recorded_at": "2026-10-26T07:41:07.631171+00:00",
+  "commit": "566f13b8b47c726c3756fcd2d960e15446c71223",
   "working_tree_dirty": true,
   "passed": true,
   "lint_issues": 0,
@@ -17,12 +17,12 @@
     "skipped": 0,
     "passed": 91
   },
-  "test_duration_seconds": 33.458,
+  "test_duration_seconds": 23.926,
   "mean_complexity": 2.31,
   "max_complexity": 13,
   "source_files": 19,
   "source_lines": 593,
-  "pipeline_seconds": 53.266,
-  "database": "PostgreSQL",
+  "pipeline_seconds": 42.594,
+  "database": "SQLite",
   "browser_included": true
 }

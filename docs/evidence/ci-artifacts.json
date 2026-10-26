@@ -1,4 +1,25 @@
 {
-  "artifacts": [],
-  "total_count": 0
+  "total_count": 1,
+  "artifacts": [
+    {
+      "id": 12633944698,
+      "node_id": "MDg6QXJ0aWZhY3QxMjYzMzk0NDY5OA==",
+      "name": "quality-evidence",
+      "size_in_bytes": 947561,
+      "url": "https://api.github.com/repos/DanilaSm08/Creditsoft/actions/artifacts/12633944698",
+      "archive_download_url": "https://api.github.com/repos/DanilaSm08/Creditsoft/actions/artifacts/12633944698/zip",
+      "expired": false,
+      "digest": "sha256:0e1b40f94c03e5fa5ee2f8c0f6b3a2432d06b093b7030eaf3de6e5c671835aee",
+      "created_at": "2026-10-26T07:36:36Z",
+      "updated_at": "2026-10-26T07:36:36Z",
+      "expires_at": "2027-01-24T07:33:46Z",
+      "workflow_run": {
+        "id": 40286540177,
+        "repository_id": 1433623878,
+        "head_repository_id": 1433623878,
+        "head_branch": "main",
+        "head_sha": "566f13b8b47c726c3756fcd2d960e15446c71223"
+      }
+    }
+  ]
 }
